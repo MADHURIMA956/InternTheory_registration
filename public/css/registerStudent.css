@@ -1,0 +1,26 @@
+.inner-box{
+    width: 37%;
+}
+
+.m-zero{
+    margin: 1.5% 0;
+}
+
+.form>div:nth-child(1){
+    display: flex;
+}
+.form>div:nth-child(1)>input{
+    width: 44%;
+}
+
+@media only screen and (max-width:700px) {
+    .inner-box{
+        width: 100%;
+    }
+}
+
+@media only screen and (min-width:700px) and (max-width:1012px) {
+    .inner-box{
+        width: 60%;
+    }
+}
