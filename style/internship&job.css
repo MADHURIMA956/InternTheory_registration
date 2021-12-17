@@ -1,0 +1,245 @@
+body {
+    background-color: #FAFAFA;
+    font-family: "Roboto", "Helvetica", "Arial", sans-serif;
+}
+
+#internAndJobContainer {
+    display: grid;
+    gap: 1rem;
+    grid-template-columns: 24% 66%;
+    margin: 9rem 0;
+    padding: 1rem;
+}
+
+#internAndJobContainer1 {
+    display: grid;
+    gap: 1rem;
+    grid-template-columns: 24% 66%;
+    margin: 4.3rem 0;
+    padding: 1rem;
+}
+
+#addvertisment>img {
+    max-width: 100%;
+    box-shadow: 0 2px 2px 0 rgb(0 0 0 / 22%);
+}
+
+#dis {
+    display: block;
+    margin-left: 1%;
+    border: 1px solid #E0E0E0;
+    background-color: white;
+
+}
+
+#box4 {
+    display: grid;
+    grid-template-columns: 16% 60% 24%;
+    gap: .4rem;
+    margin: 1rem 2rem;
+    border-bottom: 2px dashed rgb(224, 224, 224);
+}
+#box4:last-child {
+    border-bottom: none;
+}
+
+#shareimg {
+    height: 1.5rem;
+    margin-left: 10rem;
+}
+
+#box2 {
+    margin-left: 0rem;
+    font-size: medium;
+    color: gray;
+}
+
+
+#box2 h2 {
+    margin: 0px 0px 5px;
+    color: black;
+    font-size: 20px;
+    font-weight: 400;
+    line-height: 1.6;
+    letter-spacing: 0.0075em;
+}
+
+#box2 h5,
+p {
+    margin: 0px 0px 5px;
+    font-size: .875rem;
+}
+
+#box3 {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+    justify-content: space-around;
+
+}
+
+#box3>p {
+
+    font-weight: 400;
+    line-height: 1.5;
+    letter-spacing: 0.01071em;
+    color: #3C4858;
+    font-size: 0.875rem;
+}
+
+#box3>button {
+    cursor: pointer;
+    border: none;
+    background-color: white;
+    color: blue;
+    font-weight: lighter;
+}
+
+#box4>div:nth-child(1) {
+    margin: auto;
+}
+
+#box4>div:nth-child(1)>img {
+    max-width: 100%;
+    height: 6rem;
+}
+
+#hh{
+    color: rgba(0, 0, 0, 0.87);
+    font-size: 1.5rem;
+    font-family: "Roboto", "Helvetica", "Arial", sans-serif;
+    font-weight: 400;
+    line-height: 1.33;
+    margin-left: 0.7rem;
+}
+
+.multipleSelection {
+    width: 15rem;
+    /* background-color: #BCC2C1; */
+}
+
+.selectBox {
+    position: relative;
+}
+
+.selectBox select {
+    width: 100%;
+    font-weight: bold;
+}
+
+.overSelect {
+    position: absolute;
+    left: 0;
+    right: 0;
+    top: 0;
+    bottom: 0;
+}
+
+.cb1 {
+    /* display: none; */
+    border: 1px solid rgb(221, 221, 221);
+    display: none;
+    width: 15rem;
+    overflow: scroll;
+    position: absolute;
+    background-color: white;
+    margin: 0.4rem 0;
+}
+
+.cb1 label {
+    display: block;
+    height: 2rem;
+ 
+    
+}
+
+.cb1 label:hover {
+    background-color:rgb(204, 204, 204);
+}
+
+#yo {
+    display: grid;
+    grid-template-columns: repeat(6, auto);
+    margin: 1.2rem;
+    align-items: center;
+    gap: .4rem;
+    justify-content: center;
+
+}
+
+#main {
+    border: 1px solid rgb(221, 221, 221);
+    background-color: white;
+    /* margin: 5.2rem 0; */
+    top: 70px;
+    width: 100%;
+    height: 5rem;
+    position: fixed;
+}
+
+
+
+#option {
+    border: none;
+ border-bottom: 1px solid rgb(204, 204, 204);
+    font-size: 17px;
+    font-weight: normal;
+    color: #3C4858;
+ }
+
+#filterBtn {
+    color: #fff;
+    background-color: #087CDD;
+    padding: 8px 18px;
+    min-width: 64px;
+    font-size: 0.8125rem;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+}
+
+#filterInput {
+    border: none;
+    border-bottom: 1px solid rgb(204, 204, 204);
+    background: #f2f2f2 !important;
+    font-size: 17px;
+    outline: none;
+}
+
+#filterDiv {
+    padding: 10px 10px;
+    background: #f2f2f2 !important;
+    border-radius: 4px;
+
+}
+#emptyDiv {
+    /* border-top: 2px dashed rgb(224, 224, 224); */
+    text-align: center;
+    color: #3C4858;
+    font-size: 0.875rem;
+}
+
+#emptyImg {
+    height: 3rem;
+    width: 3rem;
+}
+
+#emptyHead {
+    color: #087CDD;
+    font-size: 1.5rem;
+    margin: 0.2rem;
+}
+
+#emptyPera4 {
+    margin: 2rem 0;
+}
+
+#checkBoxes1 {
+    width: 15rem;
+    overflow: hidden;
+    position: absolute;
+    background-color: white;
+    border: 1px solid rgb(221, 221, 221);
+    border-radius: 4px;
+    margin: 0.4rem 0;
+}

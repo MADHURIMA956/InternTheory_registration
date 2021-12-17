@@ -5,8 +5,8 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Hire Interns and Freshers From India | Company Registration  | Intern Theory</title>
-    <link rel="stylesheet" href="css/loginform.css" />
-    <link rel="stylesheet" href="css/temp.css" />
+    <link rel="stylesheet" href="/css/loginform.css" />
+    <link rel="stylesheet" href="/css/temp.css" />
     <script src="https://code.jquery.com/jquery-3.5.0.js"></script>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" />
 </head>
@@ -49,22 +49,22 @@
                 <h5>OR</h5>
             </div>
             <div>
-                <form onsubmit="registerStudent(event)" class="form" action="register/registerStudent" method="post" enctype="multipart/form-data">
+                <form class="form" action="/register" method="post" enctype="multipart/form-data">
                     <div>
-                        <input id="first" type="text" placeholder="first Name">
-                        <input id="last" type="text" placeholder="last Name">
+                        <input id="first" type="text" name ="first_Name" placeholder="first Name">
+                        <input id="last" type="text" name ="last_name" placeholder="last Name">
                     </div>
                     <!-- <label for="email">Email/Number</label> -->
-                    <input type="text" placeholder="Email/Number*" id="email" required />
+                    <input type="text" placeholder="Email/Number*" name ="email" id="email" required />
                     <!-- <label for="password">Password</label> -->
-                    <input onclick="restForm()" type="password" placeholder="Password*" id="password" required />
+                    <input onclick="restForm()" type="password" name="password" placeholder="Password*" id="password" required />
                     <div id="hide">
-                        <input id="mobile" type="num" placeholder="Mobile Number" required>
-                        <input id="city" type="text" placeholder="Select City" required>
-                        <input id="preference" type="text" placeholder="Preferences Select one or more *" required>
-                        <input id="howfind" type="text" placeholder="How did you find us *" required>
-                        <input id="lookingfor" type="text" placeholder="What are you looking for? *" required>
-                        <input id="affilate" type="text" placeholder="Affilate Code (if any)">
+                        <input id="mobile" type="num" name="mobile" placeholder="Mobile Number" required>
+                        <input id="city" type="text" name="city" placeholder="Select City" required>
+                        <input id="preference" type="text" name="preference" placeholder="Preferences Select one or more *" required>
+                        <input id="howfind" type="text" name="howfind" placeholder="How did you find us *" required>
+                        <input id="lookingfor" type="text" name="lookingFor" placeholder="What are you looking for? *" required>
+                        <input id="affilate" type="text" name="affilate" placeholder="Affilate Code (if any)">
                     </div>
                     <button id="registerStudbtn" class="login_btn">Register</button>
                 </form>
@@ -76,6 +76,15 @@
 
 </body>
 </html>
+<script>
+    let hideform=document.getElementById('hide')
+    hideform.style.display='none'
+   function restForm(){
+    hideform.style.display='block'
+    document.querySelector('.login').style.height='49rem'
+}
+
+</script>
 <!-- <script type="module">
 
     import { product, showData, hello ,afterLogout} from './script/showData.js'

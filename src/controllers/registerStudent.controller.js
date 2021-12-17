@@ -1,4 +1,7 @@
+const path =require('path');
+
 const express = require('express');
+
 
 require("dotenv").config();
 const jwt = require("jsonwebtoken");
@@ -7,6 +10,8 @@ const { body , validationResult } = require('express-validator');
 const router = express.Router();
 
 const RegisterStudent = require('../models/registerStudent.model');
+const upload=require('../middlewares/upload')
+
 
 
 const newToken = (user) => {
@@ -14,7 +19,9 @@ const newToken = (user) => {
   };
   
 router.post('/',
-  body('first_Name')
+ 
+upload.single('image_urls'),
+body('first_Name')
   .notEmpty()
   .withMessage('This field is required'),
   body('last_name')
@@ -47,6 +54,7 @@ router.post('/',
   body('lookingFor')
   .notEmpty()
   .withMessage('This field is required') ,
+ 
   async (req, res) => {
 
      const errors = validationResult(req);
@@ -61,7 +69,6 @@ router.post('/',
       });
       return res.status(400).json({errors:newError});
     }
-
     try {
       
       let user = await RegisterStudent.findOne({ email: req.body.email }).lean().exec();
@@ -86,15 +93,16 @@ router.post('/',
   
       const token = newToken(user);
       res.status(201).json({ user, token });
+      console.log(user,token)
 
     } catch (e) {
       return res.status(500).json({ status: "failed", message: e.message });
     }
   });
   
-  module.exports = router;
+  
 
-router.get('/registerAsStudent' , async ( req,res) => {
+router.get('/new' , async ( req,res) => {
     try{
         const registerStudent = await RegisterStudent.find().lean().exec();
         // res.status(201).send(registerStudent)
@@ -110,3 +118,65 @@ router.get('/registerAsStudent' , async ( req,res) => {
             });
     }
 })
+
+
+// router.post('/', (req, res) => {
+//                     const first_Name = req.body.first_Name;
+//                     const last_name = req.body.last_name;
+//                     const email = req.body.email;
+//                     const password = req.body.password;
+//                     const mobile = req.body.mobile;
+//                     const city = req.body.city;
+//                     const preference = req.body.preference;
+//                     const howfind = req.body.howfind;
+//                     const lookingFor = req.body.lookingFor;
+//                     const affilate = req.body.affilate;
+
+//                   //  let user = await RegisterStudent.findOne({ email: req.body.email }).lean().exec();
+//                   //         if (user)
+//                   //           return res.status(400).json({
+//                   //             status: "failed",
+//                   //             message: " Please provide a different email address",
+//                   //           });
+
+//   const newUser = new RegisterStudent({
+//     first_Name :first_Name,
+//     last_name : last_name,
+//     email :email,
+//     password : password,
+//     mobile : mobile,
+//     city : city,
+//     preference :preference,
+//     howfind :howfind,
+//     lookingFor : lookingFor,
+//     affilate : affilate,
+//   });
+//   newUser.save((err) => {
+//     err?console.log(err) : res.send("sucessfully created user")
+//   })
+// }) ;
+
+module.exports = router;
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

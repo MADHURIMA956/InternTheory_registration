@@ -1,0 +1,1328 @@
+
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Profile</title>
+    
+    <script src="https://kit.fontawesome.com/6716631a00.js" crossorigin="anonymous"></script>
+    <script src="https://code.jquery.com/jquery-3.5.0.js"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" />
+    <link rel="stylesheet" href="./style/temp.css">
+       <style>
+  #box{
+      width:90%;
+      height: 1500px;
+      margin: auto;
+     
+      
+      display:flex;
+      gap:1%;
+      margin-top:80px;
+     margin-bottom: 100px;
+  }
+   
+  input{
+      outline: none;
+  }
+ 
+   #leftpicbox{
+       width:30%;
+       height: 400px;
+      
+       box-shadow: 0px 3px 4px 5px rgb(0 0 0 / 22%);
+
+   }
+
+   #rightdetailbox{
+       width:68%;
+       height: 1400px;
+       box-shadow: 0px 3px 3px 3px rgb(0 0 0 / 22%);
+      padding:30px;
+      background-color: #fff;
+   }
+
+  #update_personal_details{
+     width: 500px;
+     height: 500px;
+     overflow: scroll;
+      padding: 20px 30px;
+     
+     font-size:15px;
+     z-index: 50;
+    background-color:#fff;
+    box-shadow:0px 11px 15px -7px rgb(0 0 0 / 20%), 0px 24px 38px 3px rgb(0 0 0 / 14%), 0px 9px 46px 8px rgb(0 0 0 / 12%);
+
+     visibility:hidden; 
+    position: absolute;
+    top: 100px;
+    left:30%;
+
+  }
+   #update_personal_details label{
+  font-size:16px;
+
+   }
+   #update_personal_details input{
+       width:80%;
+       margin:10px auto;
+       padding: 10px;
+       border: none;
+       border-bottom: 2px solid black;
+   }
+  #update_personal_details select{
+      
+      width: 400px;
+      padding: 10px;
+      border: none;
+      border-bottom: 2px solid black;
+      margin-bottom: 10px;
+  }
+  textarea{
+      width: 80%;
+      padding:10px;
+  }
+  #update_personal_details button{
+      background-color:#DF1E2E;
+      color: white;
+      margin-left: 30%;
+      padding:6px 16px;
+      font-size:0.875rem;
+      margin-right: 5%;
+      margin-top: 10%;
+      cursor: pointer;
+      border-radius: 4px;
+  }
+    #update_personal_details button:hover{
+        background-color:#97141f
+    }
+     #update_personal_details a{
+         text-decoration:none;
+         color: #087CDD;
+         cursor: pointer;
+         font-size:0.875rem;
+         text-transform: uppercase;
+     }
+
+
+
+
+      #update_personal_details a:hover{
+          background-color:#aedbff;
+          padding: 10px;
+          border-radius: 4px;
+      }
+      #update_personal_details h1{
+          font-size:16px;
+          line-height:20px;
+          font-weight: 500;
+          color: #3C4858;
+          font-family: "Roboto", "Helvetica", "Arial", sans-serif;
+          display: block;
+      }
+      /* update address css from here*/
+  #update_address{
+      width: 500px;
+      height: 400px;
+      overflow: hidden;
+      visibility: hidden;
+      padding: 20px 30px;
+    box-shadow:   0px 11px 15px -7px rgb(0 0 0 / 20%), 0px 24px 38px 3px rgb(0 0 0 / 14%), 0px 9px 46px 8px rgb(0 0 0 / 12%);
+
+     position:absolute;
+     top: 700px;
+     left:30%;
+     font-size:15px;
+     z-index: 50;
+   background-color:#fff;
+
+  }
+    #update_address h1{
+        font-size:16px;
+          line-height:20px;
+          font-weight: 500;
+          color: #3C4858;
+          font-family: "Roboto", "Helvetica", "Arial", sans-serif;
+          display: block;
+
+    }
+
+    #update_address input{
+        width:80%;
+       margin:10px auto;
+       padding: 10px;
+       border: none;
+       border-bottom: 2px solid black;
+    }
+  #update_address label{
+      font-size: 16px;
+  }
+
+  #update_address select{
+      
+      width: 400px;
+      padding: 10px;
+      border: none;
+      border-bottom: 2px solid black;
+      margin-bottom: 10px;
+  }
+
+
+  #update_address button{
+      background-color:#DF1E2E;
+      color: white;
+      margin-left: 30%;
+      padding:6px 16px;
+      font-size:0.875rem;
+      margin-right: 5%;
+      margin-top: 10%;
+      cursor: pointer;
+      border-radius: 4px;
+  }
+    #update_address button:hover{
+        background-color:#97141f
+    }
+     #update_address a{
+         text-decoration:none;
+         color: #087CDD;
+         cursor: pointer;
+         font-size:0.875rem;
+         text-transform: uppercase;
+     }
+#update_address a:hover{
+    background-color:#aedbff;
+          padding: 10px;
+          border-radius: 4px;
+}
+
+
+
+  #add_Education{
+    width: 500px;
+      height: 400px;
+      overflow: hidden;
+   position: absolute;
+   top: 1200px;
+   left:30%;
+      padding: 20px 30px;
+     box-shadow: 0px 11px 15px -7px rgb(0 0 0 / 20%), 0px 24px 38px 3px rgb(0 0 0 / 14%), 0px 9px 46px 8px rgb(0 0 0 / 12%);
+
+     font-size:15px;
+     z-index: 50;
+   background-color:#fff;
+     visibility:hidden; 
+  }
+
+    #add_Education h1{
+        font-size:16px;
+          line-height:20px;
+          font-weight: 500;
+          color: #3C4858;
+          font-family: "Roboto", "Helvetica", "Arial", sans-serif;
+          display: block;
+
+    }
+  #add_Education input{
+        width:80%;
+       margin:10px auto;
+       padding: 10px;
+       border: none;
+       border-bottom: 2px solid black;
+    }
+
+    #add_Education label{
+      font-size: 16px;
+  }
+
+  #add_Education select{
+      
+      width: 400px;
+      padding: 10px;
+      border: none;
+      border-bottom: 2px solid black;
+      margin-bottom: 10px;
+  }
+
+
+  #add_Education button{
+      background-color:#DF1E2E;
+      color: white;
+      margin-left: 30%;
+      padding:6px 16px;
+      font-size:0.875rem;
+      margin-right: 5%;
+      margin-top: 10%;
+      cursor: pointer;
+      border-radius: 4px;
+  }
+    #add_Education button:hover{
+        background-color:#97141f
+    }
+     #add_Education a{
+         text-decoration:none;
+         color: #087CDD;
+         cursor: pointer;
+         font-size:0.875rem;
+         text-transform: uppercase;
+     }
+
+     #add_Education a:hover{
+        background-color:#aedbff;
+          padding: 10px;
+          border-radius: 4px;
+     }
+   #updiv{
+       height:50%;
+       width:50%;
+      justify-content:center;
+      padding-left: 10%;
+        text-align: center;
+      
+      margin: auto;
+        margin-bottom: 5%;
+       
+   }
+ #updiv img{
+    width:100px;
+    height:100px;
+ }
+   #updiv button{
+       background-color: #087CDD;
+       color: white;
+       margin: 15px;
+       font-size:13px;
+       padding:4px 8px;
+       margin-bottom:8px;
+       box-shadow: 5px;
+       box-sizing: border-box;
+       border-radius:5px;
+
+   }
+   #updiv button:hover {
+    background-color: #829cb1;
+   }
+  #updiv p{
+       color:#999; font-size: 14px; font-weight: 400;
+       font-family: "Roboto", "Helvetica", "Arial", sans-serif;
+    font-weight: 400;
+    line-height: 1.75;
+    letter-spacing: 0.00938em;
+    display: block;
+    padding-bottom: 7px;
+    border-bottom: 1px solid black;
+  }
+
+  #dndiv{
+       margin-top:5%;
+
+  }
+  #dndiv p{
+      color: #3C4858;
+      font-size: 14px;
+      line-height:21px;
+      letter-spacing:0.14994px;
+      margin: 0 ;
+      padding:10px 30px ;
+      font-weight:400;
+      font-style: normal;
+  }
+
+#d1{
+    width:90% ;
+    height:120px;
+   
+    margin: auto;
+    display: flex;
+    margin-left:5px;
+    padding: 3%;
+    border-bottom:1px dashed gray;
+}
+#imdv{
+    width:20%;
+    height:130px;
+}
+#imdv img{
+    width:100%;
+    height:100%;
+    
+}
+#txdv{
+    width:78%;
+    height:150px;
+    margin-left: 2%;
+    padding: 3%;
+   
+}
+ #txdv p{
+     color:rgb(60,72,88);
+     font-size: 16px;
+     line-height:20px;
+     margin: 0;
+     padding: 0;
+     font-weight: 500;
+     margin-bottom:2%;
+ }
+#btndv{
+    display: flex;
+    
+}
+#btndv1{
+    width:70%;
+  
+   
+}
+  #btndv1 span{
+      margin-right: 20px;
+      padding: 10px;
+  }
+  #btndv1 span:nth-child(1){
+      background-color:#087CDD;
+      color: white;
+      padding: 6px 10px;
+      font-size:13px;
+      line-height:22.75px;
+      font-weight:500;
+      cursor: pointer;
+      border-radius: 4px;
+  }
+   #btndv1 span:nth-child(1):hover{
+       background-color:rgb(5,86,154);
+
+   }
+   #btndv1 span:nth-child(2){
+      
+      
+      color: rgb(223,30,46);
+      padding: 6px 10px;
+      font-size:13px;
+      line-height:22.75px;
+      font-weight:500;
+      cursor: pointer;
+      border:1px solid rgba(223,30,46,0.5);
+      font-size:13px;
+      padding:4px 8px;
+      font-weight:500;
+      text-transform: uppercase;
+      cursor: pointer;
+      border-radius:4px;
+  }
+   #btndv1 span:nth-child(2):hover{
+       background-color:rgba(223,30,46,0.08);
+      
+     
+   }
+  #btndv2 span{
+      color: rgb(8,124,221);
+     margin-left: -1px;
+      font-size: 13px;
+      border: 1px solid rgba(8, 124, 221, 0.5);
+      padding: 4px 8px;
+      text-align: -webkit-right;
+      cursor: pointer;
+      border-radius: 4px;
+  }
+  #btndv2 span:hover{
+      background-color:#bfdbf1;
+  }
+
+  #d2{
+      height: 400px;
+      width:100%;
+      border-bottom: 1px dashed gray;
+  }
+    #upprsn{
+        float: right;
+        position: relative;
+        top:10px;
+        right:30px;
+        background-color:#087CDD;
+        padding: 5px;
+        color: white;
+        border-radius: 50%;
+    }
+
+  #d2 h5{
+      color: #3C4858;
+      font-size:16px;
+      line-height:20px;
+      padding:0px 0px 10px ;
+      font-weight: 100;
+      margin-left: 20px;
+  }
+    .dtl{
+        width:90%;
+        margin:10px ;
+        display: flex;
+      
+        font-size:16px;
+        font-weight:400;
+       
+    }
+    .dtl div:nth-child(1){
+     width:30%;
+     text-align: left;
+     font-weight: 500;
+     padding: 4px;
+ }
+
+ .dtl div:nth-child(2){
+     width:60%;
+     text-align: left;
+    font-weight:400;
+    padding:4px;
+ }
+  
+     #d3{
+         width:90%;
+         height: 250px;
+         margin:  auto;
+         border-bottom: 1px dashed gray;
+     }
+
+       #d3 h5{
+        color: #3C4858;
+      font-size:16px;
+      line-height:20px;
+      padding:0px 0px 10px ;
+      font-weight: 100;
+      margin-left: 20px;
+       }
+       #d4{
+           width:90%;
+           height: 200px;
+           margin: auto;
+           border-bottom: 1px dashed gray;
+       }
+       #d4 h5{
+        color: #3C4858;
+      font-size:16px;
+      line-height:20px;
+      padding:0px 0px 10px ;
+      font-weight: 100;
+      margin-left: 20px;
+       }
+       #upadrs{
+           float: right;
+           position: relative;
+           top:10px;right:20px;
+           background-color:#087CDD;
+           padding: 5px;
+           color: white;
+           border-radius: 50%;
+       }
+         #d5{
+             width:50%;
+             height: 250px;
+             margin-top:50px;
+             border-right: 2px solid red !important;
+           border-top: 1px solid gray;
+           border-bottom: 1px solid gray;
+           padding:10px;
+         }
+         #d5 h5{
+            color: #3C4858;
+      font-size:16px;
+      line-height:20px;
+      padding:0px 0px 10px ;
+      font-weight: 100;
+      margin-left: 20px;
+         }
+         #d5 p{
+             margin: 0;
+             padding: 0;
+         }
+           #aded{
+               float: right;
+               color: white;
+               background-color:#087CDD;
+               padding: 5px;
+               border-radius: 50%;
+           }
+    
+      #gac div{
+          background-color:#e0e0e0;
+          display: flex;
+          width:250px;
+          height:30px;
+          border-radius: 15px;
+      }
+  #gac div img{
+      width:20px; height:20px;
+      padding:5px;
+  }
+   #gac div p{
+       font-size:13px;
+       padding: 0px 12px;
+       font-weight: 400;
+       color:rgba(0,0,0,0.87);
+   }
+  #fbac div p{
+    font-size:13px;
+       padding: 0px 12px;
+       font-weight: 400;
+       color:rgba(0,0,0,0.87);
+  }
+
+  #fbac div{
+          background-color:#e0e0e0;
+          display: flex;
+          width:250px;
+          height:30px;
+          border-radius: 15px;
+      }
+   #fbac div img{
+    width:20px; height:20px;
+      padding:5px;
+   }
+
+
+
+       </style>
+
+</head>
+<body>
+     <div id="nn123"></div> 
+      <div id="box">
+        <div id="leftpicbox"></div>
+      
+        <div id="rightdetailbox">
+
+            <div id="d1"></div>
+            <div id="d2">
+                <span id=upprsn>
+                    <i class="fas fa-pen-square"></i>
+                </span>
+
+                <h5>Personal Details</h5>
+                
+
+                 <div class="dtl">
+                     <div>Name</div>
+                     <div id="n"></div>
+                 </div>
+
+              <div class="dtl">
+                  <div>Gender</div>
+                  <div id="g"></div>
+              </div>
+
+               <div class="dtl">
+                   <div>DOB</div>
+                   <div id="d"></div>
+               </div>
+
+               <div class="dtl">
+                   <div>Languages</div>
+                   <div id="l"></div>
+               </div>
+
+               <div class="dtl">
+                   <div>Hobbies</div>
+                   <div id="h"></div>
+               </div>
+
+               <div class="dtl">
+                   <div>Achievements</div>
+                   <div id="a"></div>
+               </div>
+
+   <div class="dtl">
+       <div>Skills</div>
+       <div id="s"></div>
+   </div>
+
+    <div class="dtl">
+        <div>Preferences</div>
+        <div id="p"></div>
+    </div>
+
+           <div class="dtl">
+               <div>About</div>
+               <div id="ab"></div>
+           </div>
+
+
+        </div>
+  
+
+       
+    
+    
+
+    <div id="d3">
+       
+  <h5>Contact Details</h5>
+  <div  class="dtl">
+      <div>Email ID</div>
+      <div id="mail"></div>
+  </div>
+
+    <div  class="dtl">
+        <div>Mobile Number</div>
+        <div id="no"></div>
+    </div>
+
+     <div  class="dtl">
+         <div>Facebook Account</div>
+         <div id="fbac"></div>
+     </div>
+
+     <div  class="dtl">
+         <div>Google Account</div>
+         <div id="gac"></div>
+     </div>
+
+</div>
+
+    
+<div id="d4">
+    <span id=upadrs>
+        <i class="fas fa-pen-square"></i>
+    </span>
+     <h5>Address Details</h5>
+     <div class="dtl">
+         <div>Address</div>
+         <div id="ad"></div>
+     </div>
+     <div class="dtl">
+         <div>City</div>
+         <div id="ct"></div>
+     </div>
+     <div class="dtl">
+         <div>State</div>
+         <div id="st"></div>
+     </div>
+     <div class="dtl">
+         <div>Pincode</div>
+         <div id="pn"></div>
+     </div>
+
+</div>
+
+
+  <div id="d5">
+    <span id="aded">
+        <i class="fa fa-plus" aria-hidden="true"></i>
+    </span>
+
+      <h5>Educational Details</h5>
+
+  </div>
+
+
+
+    </div>
+    
+    </div>
+     
+
+
+
+
+
+
+
+
+ 
+  <div id="update_personal_details">
+      
+    <h1>Update Personal Details</h1>
+    <input type="text" placeholder=" Enter Your First Name*" id="fname"><br>
+    <input type="text" placeholder=" Enter Your Last Name*" id="lname"><br>
+        <select id="gender" placeholder="Gender*">
+           <option value="Male">Male</option>
+           <option value="Female">Female</option>
+           <option value="Others">Others</option>
+       </select><br>
+       <label>Date of Birth*</label><br>
+      <input type="date" placeholder="Date of Birth*"id="date"><br>
+      <select id="lang"><br>
+        
+          <option value="Hindi">Hindi</option>
+          <option value="English">English</option>
+          <option value="German">German</option>
+          <option value="Spansih">Spanish</option>
+          <option value="Marathi">Marathi</option>
+          <option value="French">French</option>
+          <option value="Chinese">Chinese</option>
+         
+      </select><br>
+  <input type="text" placeholder="hobbies" id="hobby"><br>
+     <input type="text" placeholder="Achievements" id="achiev"><br>
+
+       <select id="skill" placeholder="Skills*">
+          
+           <option value="Digital Marketing">Digital Marketing</option>
+           <option value="consulting">Consulting</option>
+           <option value="Animation">Animation</option>
+           <option value="Engineering">Engineering</option>
+           <option value="Finance">Finance</option>
+       </select><br>
+
+  <select id="pref">
+     
+      <option value="Animation">Animation</option>
+      <option value="Web design">Web design</option>
+      <option value="Content writing">Content writing</option>
+      <option value="Social Media">Social Media</option>
+      <option value="Event Management">Event Management</option>
+  </select><br>
+     <label>About</label><br>
+  <textarea row="5" col="20" id="des" placeholder="write a few lines that best describe you">
+
+  </textarea> 
+
+     <div>
+         <button onclick="updateprofile()">UPDATE</button>
+         <a href="profile.html">Cancel</a>
+     </div>
+    
+
+  </div>
+
+
+     <div id="update_address" >
+   <h1>Address </h1>
+             <input type="text" placeholder="Address*" id="address"><br>
+                <select id="state" placeholder="State">
+                    <option>select state</option>
+ <option value="Bihar">Bihar</option>
+ <option value="Rajashthan">Rajashthan</option>
+ <option value="Punjab">Punjab</option>
+ <option value="haryana">haryana</option>
+ <option value="Delhi">Delhi</option>
+ <option value="Maharashtra">Maharashtra</option>
+ <option value="Gujrat">Gujrat</option>
+ <option value="Tamilnadu">Tamilnadu</option>
+ <option value="Goa">Goa</option>
+ <option value="karnataka">karnataka</option>
+                </select><br>
+  <input type="text" placeholder="Enter your city" id="city"><br>
+  <input type="number" placeholder="Pincode*" id="pincode"><br>
+
+    <div>
+        <button onclick="Addaddress()" >Add</button>
+        <a href="profile.html">Cancel</a>
+    </div>
+    </div> 
+
+
+
+        <div id="add_Education"> 
+          
+          <h1>Add Education</h1>
+          <label>level of Education*</label><br>
+      <select id="edu">
+          <option>Select level of Education*</option>
+       <option value="Graduation">Graduation</option>
+       <option value="diploma">Diploma</option>
+       <option value="X|| Equivalent">X||</option>
+       <option value="X Equivalent">X</option>
+       <option value="Certificate Course">Certificate Course</option>
+      </select><br>
+      
+     <label>Institution Name*</label><br>
+      <input type="text" name="Enter Your Institution Name" id="insname"><br>
+  <label>Degree*</label><br>
+  <input type="text" name="Enter Your Degree" id="degree"><br>
+  <label>Select Year*</label><br>
+  <select id="year">
+    <option >Select College Year</option>
+    <option value="First Year">First Year</option>
+    <option value="Second Year">Second Year</option>
+    <option value="Third Year">Third Year</option>
+    <option value="Forth Year">Forth Year</option>
+    <option value="Fifth Year">Fifth Year</option>
+  </select><br>
+     
+    <div>
+        <button onclick="addEducation()">UPDATE</button>
+        <a href="profile.html">Cancel</a>
+    </div>
+</div> 
+      <div id="footer"></div> 
+
+
+    <script>
+        var student_detail=JSON.parse(localStorage.getItem("studentDetail"));
+  
+        function updateprofile(){
+           
+           // var student_detail=JSON.parse(localStorage.getItem("studentDetail"));
+           // console.log(student_detail)
+
+            var fname=document.getElementById("fname").value;
+            var lname=document.getElementById("lname").value;
+             var gender=document.getElementById("gender").value;
+             var dob=document.getElementById("date").value;
+             var lang=document.getElementById("lang").value;
+             var hobby=document.getElementById("hobby").value;
+             var achvmnt=document.getElementById("achiev").value;
+             var skill=document.getElementById("skill").value;
+             var pref=document.getElementById("pref").value;
+           var about=document.getElementById("des").value;
+
+          var name= fname +" "+ lname;
+         
+        //   console.log(name)
+        //   let user_info={}
+        //      user_info. Name= name,
+        //     user_info.Gender=gender,
+        //     user_info. DOB=dob,
+        // user_info.Language=lang,
+        //     user_info.Hobbies=hobby,
+        //     user_info.Achievements=achvmnt,
+        //     user_info.  Skills=skill,
+        //     user_info.Preference=pref,
+        //     user_info.About=about,
+   
+          
+
+         // localStorage.setItem("user_profile",JSON.stringify(user_info));
+          
+        // var student_detail=JSON.parse(localStorage.getItem("studentDetail"))
+       
+         student_detail.first=fname;
+         student_detail.last=lname;
+        // student_detail.Name=`${student_detail.first}`+" "+ `${student_detail.last}`;
+        // if(student_detail.Name==undefined){
+        //     student_detail.Name=name;
+        // }
+         student_detail.Name=name;
+    //    console.log(student_detail)
+         student_detail.Gender=gender;
+         student_detail.Dob=dob;
+         student_detail.Language=lang;
+         student_detail.Hobbies=hobby;
+         student_detail.Achievements=achvmnt;
+         student_detail.Skills=skill;
+         student_detail.Preference=pref;
+         student_detail.About=about;
+
+
+         localStorage.setItem("studentDetail",JSON.stringify(student_detail));
+          
+      setTimeout(()=>{
+         alert("Your profile is updated")
+          window.location.href="profile.html";
+      },1000)
+            
+        
+
+        }
+
+       
+
+        function Addaddress(){
+            let user_info= JSON.parse(localStorage.getItem("studentDetail")) ;
+          //  console.log(user_info) ;
+            var adrs=document.getElementById("address").value ;
+            var state=document.getElementById("state").value ;
+            var city= document.getElementById("city").value ;
+            var pincode=document.getElementById("pincode").value ;
+
+             user_info.Address=adrs,
+             user_info.city=city,
+             user_info.Pincode=pincode,
+             user_info.State=state
+
+             
+     setTimeout(()=>{
+        alert("Your Address is updated")
+         window.location.href="profile.html";
+     },1000)
+            
+             localStorage.setItem("studentDetail",JSON.stringify(user_info));
+        }
+
+
+     
+     function addEducation(){
+        let user_info= JSON.parse(localStorage.getItem("studentDetail")) ;
+         
+        var edu=document.getElementById("edu").value ;
+        var insname=document.getElementById("insname").value ;
+        var degree=document.getElementById("degree").value ;
+        var year=document.getElementById("year").value ;
+
+        user_info.Education=edu,
+        user_info.institute=insname,
+        user_info.Degree=degree,
+        user_info.Year=year
+
+        alert("Your Educational details are updated")
+     setTimeout(()=>{
+         window.location.href="profile.html";
+     },2000)
+        localStorage.setItem("studentDetail",JSON.stringify(user_info));
+     }
+   
+
+      var user_info1= JSON.parse(localStorage.getItem("studentDetail")) ;
+
+ 
+
+
+        //  console.log( "final data from lclstrg,",user_info1)
+   
+   
+
+     function appenditeminleftdiv(){
+     let updiv = document.createElement("div");
+       updiv.setAttribute("id","updiv")
+     let image= document.createElement("img");
+         if(user_info1.Gender=="Male"){
+             image.src="https://assets.interntheory.com/creative/default-images/guyProfile.jpg"
+         }
+        else{
+     image.src="https://assets.interntheory.com/creative/default-images/girlProfile.jpg"
+        }
+
+       let btn = document.createElement("button");
+       btn.textContent ="GO TO DASHBOARD"
+        btn.onclick =gotodashboard;
+       let p1=document.createElement("p");
+       p1.textContent =user_info1.first+ " "+user_info1.last;
+       let dndiv=document.createElement("div");
+       dndiv.setAttribute("id","dndiv")
+      let p2=document.createElement("p");
+       p2.textContent ="Email:"+" "+user_info1.email;
+
+       let p3=document.createElement("p");
+       p3.textContent ="Mobile:"+" "+user_info1.mobile;
+
+       dndiv.append(p2,p3)
+  updiv.append(image,btn,p1)
+   document.getElementById("leftpicbox").append(updiv,dndiv)
+
+
+
+
+    }
+
+   appenditeminleftdiv();
+
+
+
+    function gotodashboard(){
+        window.location.href="courses.html";
+    }
+
+
+
+
+
+
+     function appenddiv1(){
+
+        let imdv=document.createElement("div");
+  imdv.setAttribute("id","imdv")
+        let image= document.createElement("img");
+         if(user_info1.Gender=="Male"){
+             image.src="https://assets.interntheory.com/creative/default-images/guyProfile.jpg"
+         }
+       else{
+        image.src="https://assets.interntheory.com/creative/default-images/girlProfile.jpg"
+       }
+
+ imdv.append(image)
+    document.getElementById("d1").append(imdv);
+     
+    let txdv=document.createElement("div");
+    txdv.setAttribute("id", "txdv");
+    let p1=document.createElement("p");
+    p1.textContent =user_info1.first+" "+user_info1.last;
+     
+      let btndv=document.createElement("div");
+        btndv.setAttribute("id","btndv")
+      let btndv1=document.createElement("div");
+         btndv1.setAttribute("id","btndv1")
+        let span1=document.createElement("span");
+         span1.textContent="VIEW RESUME";
+         let span2=document.createElement("span");
+         span2.textContent="DOWNLOAD RESUME";
+
+         let btndv2=document.createElement("div");
+         btndv2.setAttribute("id","btndv2")
+         let span3=document.createElement("span");
+         span3.textContent="CHANGE PASSWORD";
+   btndv1.append(span1,span2);
+
+   btndv2.append(span3)
+      btndv.append(btndv1,btndv2)
+
+     txdv.append(p1,btndv);
+     document.getElementById("d1").append(txdv);
+
+     }
+   
+    appenddiv1();
+
+
+       function appenddiv2(){
+        
+
+        
+        if(user_info1.Name==""){
+            document.getElementById("n").innerHTML="N/A";
+        }
+       else{
+        document.getElementById("n").innerHTML=user_info1.first+" "+user_info1.last;
+       }
+
+
+
+        if(user_info1.Gender==""){
+            document.getElementById("g").innerHTML="N/A";
+        }
+          else{
+            document.getElementById("g").innerHTML=user_info1.Gender;
+          }
+
+
+
+        if(user_info1.Dob==""){
+            document.getElementById("d").innerHTML="N/A";
+        }
+        else{
+            document.getElementById("d").innerHTML=user_info1.Dob;
+        }
+
+
+        if(user_info1.Language==""){
+            document.getElementById("l").innerHTML="N/A";
+        }
+        else{
+            document.getElementById("l").innerHTML=user_info1.Language;
+        }
+
+
+        if(user_info1.Hobbies==""){
+            document.getElementById("h").innerHTML="N/A";
+            
+        }
+ else{
+
+    document.getElementById("h").innerHTML=user_info1.Hobbies;
+   }
+
+     
+       if(user_info1.Achievements==""){
+            document.getElementById("a").innerHTML="N/A";
+        }
+         else{
+            document.getElementById("a").innerHTML=user_info1.Achievements;
+         }
+
+      
+       if(user_info1.Skills==""){
+            document.getElementById("s").innerHTML="N/A";
+        }
+        else{
+            document.getElementById("s").innerHTML=user_info1.Skills;
+        }
+     
+       if(user_info1.Preference==""){
+            document.getElementById("p").innerHTML="N/A";
+        }
+        else{
+            document.getElementById("p").innerHTML=user_info1.Preference;
+        }
+     
+     if(user_info1.About==""){
+            document.getElementById("ab").innerHTML="N/A";
+        }
+        else{
+            document.getElementById("ab").innerHTML=user_info1.About;
+       }
+      
+       }
+
+
+       appenddiv2();
+
+       function appenddiv3(){
+
+     
+
+        document.getElementById("mail").innerHTML=user_info1.email;
+        document.getElementById("no").innerHTML=user_info1.mobile;
+      
+        let gdiv= document.createElement("div");
+
+  let gim =document.createElement("img");
+  gim.src="data:image/png;base64,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"
+  let gp=document.createElement("p");
+  gp.textContent=`${user_info1.email}`;
+   gdiv.append(gim,gp)
+   document.getElementById("gac").append(gdiv)
+  
+     let fdiv = document.createElement("div");
+     let fim = document.createElement("img");
+        fim.src="https://upload.wikimedia.org/wikipedia/commons/5/51/Facebook_f_logo_%282019%29.svg"
+  let fp=document.createElement("p");
+  fp.textContent="Link Your Facebook Account";
+     fdiv.append(fim,fp);
+      document.getElementById("fbac").append(fdiv)
+
+       }
+
+    appenddiv3();
+
+  function appenddiv4(){
+
+    if(user_info1.Address==""){
+            document.getElementById("ad").innerHTML="N/A";
+        }
+        else{
+            document.getElementById("ad").innerHTML=user_info1.Address;
+        }
+
+
+        if(user_info1.city==""){
+            document.getElementById("ct").innerHTML="N/A";
+        }
+        else{
+            
+        document.getElementById("ct").innerHTML=user_info1.city;
+        }
+
+        if(user_info1.State==null){
+            document.getElementById("st").innerHTML="N/A";
+        }
+        else{
+            document.getElementById("st").innerHTML=user_info1.State;
+        }
+
+        if(user_info1.Pincode==null){
+            document.getElementById("pn").innerHTML="N/A";
+        }
+        else{
+            document.getElementById("pn").innerHTML=user_info1.Pincode;
+        }
+       
+
+  }
+
+
+
+   appenddiv4();
+   function appenddiv5(){
+
+    let p1=document.createElement("p");
+    p1.textContent=user_info1.Degree;
+    let p3=document.createElement("p");
+    p3.textContent=user_info1.Education;
+    let p4=document.createElement("p");
+    p4.textContent=user_info1.Year;
+    let p2=document.createElement("p");
+    p2.textContent=user_info1.institute;
+
+  document.getElementById("d5").append(p1,p2,p3,p4)
+
+
+   }
+
+
+
+ appenddiv5()
+
+
+
+       document.getElementById("upprsn").addEventListener("click",()=>{
+         document.getElementById("update_personal_details").style.visibility="visible";
+       });
+
+       document.getElementById("upadrs").addEventListener("click",()=>{
+         document.getElementById("update_address").style.visibility="visible";
+       })
+
+       document.getElementById("aded").addEventListener("click",()=>{
+         document.getElementById("add_Education").style.visibility="visible";
+       })
+
+
+
+
+    </script>
+
+
+
+
+
+
+
+
+
+
+
+
+
+</body>
+</html>
+
+<script type='module'>
+      import { product, showData, hello, afterLogout } from './script/showData.js'
+    let localStorageData = JSON.parse(localStorage.getItem('studentDetail'))
+
+import { n12345, footer1235 } from './component/after_nav.js'
+import { n1234, footer123 } from './component/n123.js'
+
+
+if (localStorageData == null) {
+    document.getElementById('nn123').innerHTML = n1234();
+    document.getElementById('footer').innerHTML = footer123();
+}
+
+else {
+
+   
+        document.getElementById('nn123').innerHTML = n12345();
+        document.getElementById('footer').innerHTML = footer1235();
+
+        let name = document.getElementById('name');
+        name.innerText = localStorageData.first + " " +localStorageData.last;
+
+        let mail = document.getElementById('mail');
+        mail.innerText = localStorageData.email;
+
+        let phno = document.getElementById('phno');
+        phno.innerText = localStorageData.mobile;
+
+        let profile_img1 = document.getElementById('profile_img1');
+        let profile_img2 = document.getElementById('profile_img2');
+        afterLogout();
+        if(localStorageData.Gender === "Male"){
+            profile_img1.src ="https://assets.interntheory.com/creative/default-images/guyProfile.jpg";
+            profile_img2.src ="https://assets.interntheory.com/creative/default-images/guyProfile.jpg";
+         }
+        else{
+            profile_img1.src ="https://assets.interntheory.com/creative/default-images/girlProfile.jpg";
+            profile_img2.src = "https://assets.interntheory.com/creative/default-images/girlProfile.jpg";
+        }
+}
+
+    let InternshipBtn = document.getElementById('InternshipBtn')
+    let jobsBtn = document.getElementById('jobsBtn')
+    InternshipBtn.addEventListener('click', () => { hello('Internship', 'All Internships') })
+    jobsBtn.addEventListener('click', () => { hello('Job', 'Fresher Jobs') })
+
+
+    $('.btn').click(function () {
+        $(this).toggleClass("click");
+        $('.sidebar').toggleClass("show");
+    });
+
+    $('.feat-btn').click(function () {
+        $('nav ul .feat-show').toggleClass("show");
+    });
+    $('.feat1-btn').click(function () {
+        $('nav ul .feat1-show').toggleClass("show1");
+    });
+    $('.feat2-btn').click(function () {
+        $('nav ul .feat2-show').toggleClass("show2");
+    });
+</script>

@@ -1,0 +1,186 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>cart</title>
+    <link rel="stylesheet" href="./style/cart.css">
+    <script src="https://code.jquery.com/jquery-3.5.0.js"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" />
+    <link rel="stylesheet" href="./style/temp.css">
+</head>
+
+<body>
+    <!-- <div>
+        navbar space
+    </div> -->
+    <div id="nn123"></div>
+
+
+    <div class="cont">
+        <div class="cart">
+            <div class="cart_left">
+                <h6 class="jss225">Cart</h6>
+                <div id="showitems">
+                    <!-- code excuted by javascript -->
+                </div>
+            </div>
+            <div class="vl"></div>
+            <div class="cart_right">
+                <p>Amount<span id="totalamount"></span><span>₹</span></p>
+                <hr style="margin-top: -12px;">
+                <p>CGST 9% <span id="cgst"></span><span>₹</span></p>
+                <hr style="margin-top: -12px;">
+                <p>SGST 9%<span id="sgst"></span><span>₹</span></p>
+                <hr style="margin-top: -12px;">
+
+                <h3 class="total">Total: <span id="total"></span><span>₹</span></h3>
+
+                <input type="text" placeholder="coupon" id="text"><button id="promo">Go</button>
+                <br>
+
+                <button id="myBtn" class="checkout">CHECKOUT</button>
+                <!-- <button id="myBtn">Open Modal</button> -->
+
+                <!-- The Modal -->
+                <div id="myModal" class="modal">
+
+                    <!-- Modal content -->
+                    <div class="modal-content">
+                        <span class="close">&times;</span>
+                        <!-- <p>Some text in the Modal..</p> -->
+                        <!-- start modal features -->
+                        <div id="main">
+
+                            <div class="content">
+
+                                <div id="head">
+                                     <div id="logo">
+                                        <img src="https://cdn.razorpay.com/logos/8BOCiNqJJB6Zfs_medium.jpg" />
+                                    </div> 
+                                    <div id="heading">
+                                       
+                                        <!-- <button onclick="location.href='cart.html'" id="cancel">X</button> -->
+                                        <h2>Intern Theory</h2>
+                                        <p>Purchase Description</p>
+
+                                        <div id="money"></div>
+
+                                    </div>
+                                </div>
+                                <div id="language">
+                                    <h4>English</h4>
+                                </div>
+                                <div id="card_option">
+                                    <h5>Card Detail</h5>
+                                </div>
+                                <div id="new_card_box">
+                                    <div id="new_card_heading">
+                                        <h5>Add New Card</h5>
+                                    </div>
+                                    <div id="card_data">
+                                        <input type="number" id="cardNumber" placeholder="Card Number" />
+                                        <input type="text" id="exp" placeholder="MM/YY" />
+                                        <input type="text" id="cardName" placeholder="Card Holder's name" />
+                                        <input type="password" maxlength="3" id="cvv" placeholder="CVV" />
+                                    </div>
+                                </div>
+                                <div id="remember">
+                                    <input type="checkbox" />
+                                    <label>Remember Card</label>
+                                </div>
+                                <div id="pay_part">
+                                    <p id="payment" onclick="validat()">PAY</p>
+                                    <p></p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+
+                <P class="note">EMI Starting at ₹686/month</P>
+            </div>
+        </div>
+    </div>
+
+
+    <div id="footer"></div>
+
+</body>
+
+</html>
+<script src="/script/cart.js"></script>
+
+
+
+
+<script type="module">
+ import { product, showData, hello,afterLogout } from './script/showData.js'
+ let localStorageData = JSON.parse(localStorage.getItem('studentDetail'))
+
+import { n12345, footer1235 } from './component/after_nav.js'
+import { n1234, footer123 } from './component/n123.js'
+
+
+if (localStorageData == null) {
+    document.getElementById('nn123').innerHTML = n1234()
+    document.getElementById('footer').innerHTML = footer123()
+}
+
+else {
+    document.getElementById('nn123').innerHTML = n12345()
+    document.getElementById('footer').innerHTML = footer1235()
+
+    afterLogout()
+    
+        let name = document.getElementById('name');
+        name.innerText = localStorageData.first + " " +localStorageData.last;
+ 
+        let mail = document.getElementById('mail');
+        mail.innerText = localStorageData.email;
+        
+
+        let phno = document.getElementById('phno');
+        phno.innerText = localStorageData.mobile;
+
+       
+        let profile_img1 = document.getElementById('profile_img1');
+        let profile_img2 = document.getElementById('profile_img2');
+       
+        if(localStorageData.Gender === "Male"){
+            profile_img1.src ="https://assets.interntheory.com/creative/default-images/guyProfile.jpg";
+            profile_img2.src ="https://assets.interntheory.com/creative/default-images/guyProfile.jpg";
+         }
+        else{
+            profile_img1.src ="https://assets.interntheory.com/creative/default-images/girlProfile.jpg";
+            profile_img2.src = "https://assets.interntheory.com/creative/default-images/girlProfile.jpg";
+        }
+}
+
+    let InternshipBtn = document.getElementById('InternshipBtn')
+    let jobsBtn = document.getElementById('jobsBtn')
+    InternshipBtn.addEventListener('click', () => { hello('Internship', 'All Internships') })
+    jobsBtn.addEventListener('click', () => { hello('Job', 'Fresher Jobs') })
+
+
+    $('.btn').click(function () {
+        $(this).toggleClass("click");
+        $('.sidebar').toggleClass("show");
+    });
+
+    $('.feat-btn').click(function () {
+        $('nav ul .feat-show').toggleClass("show");
+    });
+    $('.feat1-btn').click(function () {
+        $('nav ul .feat1-show').toggleClass("show1");
+    });
+    $('.feat2-btn').click(function () {
+        $('nav ul .feat2-show').toggleClass("show2");
+    });
+
+  
+
+</script>

@@ -1,0 +1,524 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Course Details</title>
+    <script src="https://code.jquery.com/jquery-3.5.0.js"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" />
+    <link rel="stylesheet" href="./style/temp.css">
+    <style>
+        body {
+            background-color: #f8f8f8
+        }
+
+        #p_image {
+            height: 23em;
+            background: linear-gradient(rgba(0, 0, 0, 0), rgba(0, 0, 0, 0));
+            background-image: url(https://assets.interntheory.com/creative/courses/thumbnails/Tech.jpg);
+            background-size: cover;
+
+        }
+
+        .container {
+            /* border: 1px solid red; */
+            width: 88%;
+            /* height: 300px; */
+            margin: auto;
+            margin-top: 20px;
+            display: flex;
+            flex-wrap: wrap;
+
+        }
+
+        .left {
+            flex: 65%;
+            /* background-color: yellow; */
+            /* height: 50px; */
+            margin-bottom: 50px;
+
+        }
+
+        .middle {
+            flex: 8px;
+            /* background-color: red; */
+            height: 50px;
+        }
+
+        .right {
+            flex: 26%;
+            /* background-color: brown;
+            height: 50px; */
+            margin-top: -200px;
+        }
+
+        .courseName {
+            box-shadow: 0px 2px 2px 0px rgb(0 0 0 / 22%);
+            border-radius: 4px;
+            padding: 30px;
+            background-color: #fff;
+        }
+
+        .courseName>h1 {
+            color: rgba(0, 0, 0, 0.87);
+            font-size: 2.125rem;
+            font-family: "Roboto", "Helvetica", "Arial", sans-serif;
+            font-weight: 400;
+            line-height: 1.17;
+            letter-spacing: 0.00735em;
+            overflow: hidden;
+            white-space: nowrap;
+            text-overflow: ellipsis;
+            font-weight: 700;
+        }
+
+        .courseName>p {
+            color: rgba(0, 0, 0, 0.54);
+            color: #3C4858;
+            font-size: 0.875rem;
+            font-family: "Roboto", "Helvetica", "Arial", sans-serif;
+            font-weight: 400;
+            line-height: 1.5;
+            letter-spacing: 0.01071em;
+            margin: 0;
+            display: block;
+            overflow-wrap: break-word;
+        }
+
+        .detailsContainer {
+            margin-top: 30px;
+        }
+
+        .detailsContainer1>p {
+            font-weight: 100px;
+            font-size: 24px;
+            font-family: "Roboto", "Helvetica", "Arial", sans-serif;
+            line-height: 36px;
+            color: #333333;
+        }
+
+        .jFVRWL {
+            border-left: 5 px solid rgb(255, 179, 38);
+            padding-left: 12 px;
+            font-weight: 100 !important;
+            font-size: 24px !important;
+            color: rgb(51, 51, 51) !important;
+        }
+
+        .flexitem {
+            display: grid;
+            grid-template-columns: auto auto;
+        }
+
+        .f1 {
+            display: flex;
+            /* text-align: center; */
+            /* width: calc(100% + 8 px);
+            margin: -4 px;
+            padding: 8 px; */
+        }
+
+        .f1imgdiv {
+            padding: 4px;
+            margin: 0px;
+            box-sizing: border-box;
+        }
+
+        .f1textdiv p {
+            color: #3C4858;
+            font-size: 0.875rem;
+            font-family: "Roboto", "Helvetica", "Arial", sans-serif;
+            font-weight: 400;
+            line-height: 1.5;
+            letter-spacing: 0.01071em;
+            margin: 25px;
+            display: block;
+            overflow-wrap: break-word;
+        }
+
+        .mar {
+            margin-top: 30px;
+        }
+
+        .syllabusdiv {
+            padding: 16px;
+            margin: 0px;
+            box-sizing: border-box;
+        }
+
+        .syllabusdivp1 {
+            font-family: Roboto, Helvetica, Arial, sans-serif;
+            font-weight: 400px;
+            font-size: 14px;
+            line-height: 10px;
+            color: #087cdd;
+        }
+
+        .syllabusdivp2 {
+            font-family: Roboto, Helvetica, Arial, sans-serif;
+            font-weight: 400px;
+            font-size: 14px;
+            line-height: 10px;
+            color: rgba(0, 0, 0, 0.54);
+        }
+
+        .syllabusdivp2 span {
+            color: #377bdd;
+            font-size: 24px;
+            line-height: 24px;
+            font-weight: 400px;
+            float: right;
+        }
+
+        .bg {
+            background-color: #ffffff;
+            padding: 10px
+        }
+
+        .bg>p {
+            font-family: Roboto, Helvetica, Arial, sans-serif;
+            font-size: 14px;
+            font-weight: 400px;
+            color: #3c4858;
+            line-height: 21px;
+        }
+
+        .righttopp>b {
+            font-family: Roboto, Helvetica, Arial, sans-serif;
+            font-size: 14px;
+            font-weight: 700px;
+            color: #3c4858;
+            line-height: 21px;
+        }
+
+        .price {
+            font-Family: Roboto, Helvetica, Arial, sans-serif;
+            font-weight: 700;
+            font-Size: 32px;
+            Line-Height: 32px;
+            Color: #df1e2e;
+        }
+
+        .pbtn {
+            font-family: Roboto, Helvetica, Arial, sans-serif;
+            font-weight: 500;
+            font-size: 14px;
+            line-height: 25px;
+            color: #ffffff;
+            background-color: #df1e2e;
+            text-decoration: none;
+            border: none;
+            border-radius: 5px;
+            width: 100%;
+            height: 35px;
+        }
+
+        .pp {
+            text-align: center;
+        }
+
+        .Ebtn {
+            width: 100%;
+            color: #DF1E2E;
+            border: 1px solid rgba(223, 30, 46, 0.5);
+            padding: 5px 16px;
+            font-size: 0.875rem;
+            min-width: 64px;
+            box-sizing: border-box;
+            transition: background-color 250ms cubic-bezier(0.4, 0, 0.2, 1) 0ms, box-shadow 250ms cubic-bezier(0.4, 0, 0.2, 1) 0ms, border 250ms cubic-bezier(0.4, 0, 0.2, 1) 0ms;
+            line-height: 1.75;
+            font-family: "Roboto", "Helvetica", "Arial", sans-serif;
+            font-weight: 500;
+            border-radius: 4px;
+            letter-spacing: 0.02857em;
+            text-transform: uppercase;
+            margin: 0;
+            cursor: pointer;
+            display: inline-flex;
+            outline: none;
+            position: relative;
+            align-items: center;
+            user-select: none;
+            vertical-align: middle;
+            justify-content: center;
+            text-decoration: none;
+            background-color: transparent;
+            -webkit-appearance: none;
+            -webkit-tap-highlight-color: transparent;
+        }
+
+        .Ebtn:hover {
+            background-color: rgb(204, 133, 133);
+        }
+
+        .ad {
+            display: grid;
+            grid-template-columns: 70% auto;
+        }
+
+        .bg1 {
+            background-size: #fff4f4;
+        }
+
+        .simcourdiv1 {
+            line-height: 50px;
+        }
+
+        .simcourdiv2 {
+            line-height: 30px;
+            color: #087cdd;
+        }
+.clear{
+    clear: both;
+}
+        /* .simcourdiv2>p {
+            color: #087cdd;
+        } */
+    </style>
+</head>
+
+<body>
+<div id="nn123"></div>
+    <div id="p_image"></div>
+    <!-- https://assets.interntheory.com/creative/courses/thumbnails/it.jpg -->
+    <div class="container">
+        <div class="left">
+            <div class="courseName">
+                <h1>IT Starter Pack (4 Courses)</h1>
+                <p>Learn the most demanded skills in the IT industry today. Sign up for Web Development, Android App
+                    Development, R Programminng and Data Analytics. A complete IT package to kickstart your carrer</p>
+            </div>
+            <div class="detailsContainer courseName">
+                <div class="detailsContainer1">
+                    <p class="jFVRWL">Key Features</p>
+                    <div class="flexitem">
+                        <div class="f1">
+                            <div class="f1imgdiv"><img
+                                    src="https://assets.interntheory.com/creative/features_icon/certified.png"
+                                    width="70"></div>
+                            <div class="f1textdiv">
+                                <p><b>Certified</b></p>
+                            </div>
+                        </div>
+                        <div class="f1">
+                            <div class="f1imgdiv"><img
+                                    src="https://assets.interntheory.com/creative/features_icon/study-at-your-own-time.png"
+                                    width="70">
+                            </div>
+                            <div class="f1textdiv">
+                                <p><b>Study At Your Own Time</b></p>
+                            </div>
+                        </div>
+                        <div class="f1">
+                            <div class="f1imgdiv"><img
+                                    src="https://assets.interntheory.com/creative/features_icon/learn-from-professional.png"
+                                    width="70">
+                            </div>
+                            <div class="f1textdiv">
+                                <p><b>Learn from Industry Professionals</b></p>
+                            </div>
+                        </div>
+                        <div class="f1">
+                            <div class="f1imgdiv"><img
+                                    src="https://assets.interntheory.com/creative/features_icon/study-more.png"
+                                    width="70">
+                            </div>
+                            <div class="f1textdiv">
+                                <p><b>More Practise, Less Theory</b></p>
+                            </div>
+                        </div>
+
+                    </div>
+                    <hr style="border: 1px dashed rgb(146, 146, 146);">
+                    <!-- start div -->
+                    <div class="detailsContainer1 mar">
+                        <p class="jFVRWL">What will a student get after the course?</p>
+                        <div class="flexitem">
+                            <div class="f1">
+                                <div class="f1imgdiv"><img
+                                        src="https://assets.interntheory.com/creative/features_icon/certificate-to-upgrade.png"
+                                        width="70"></div>
+                                <div class="f1textdiv">
+                                    <p><b>4 Certificates to upgrade your resume</b></p>
+                                </div>
+                            </div>
+
+                            <div class="f1">
+                                <div class="f1imgdiv"><img
+                                        src="https://assets.interntheory.com/creative/features_icon/internships.png"
+                                        width="70">
+                                </div>
+                                <div class="f1textdiv">
+                                    <p><b>Internship Assistance</b></p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- end div -->
+                    <hr style="border: 1px dashed rgb(146, 146, 146);">
+                    <div class="detailsContainer1 mar">
+                        <p class="jFVRWL">Syllabus</p>
+                        <div class="syllabusdiv">
+                            <p class="syllabusdivp1">Web Development Courses</p>
+                            <p class="syllabusdivp2">Click here to see syllabus <span>+</span></p>
+                        </div>
+                        <hr>
+                        <div class="syllabusdiv">
+                            <p class="syllabusdivp1">Data Analytics with R Programming Courses</p>
+                            <p class="syllabusdivp2">Click here to see syllabus <span>+</span></p>
+                        </div>
+                        <hr>
+                        <div class="syllabusdiv">
+                            <p class="syllabusdivp1">Android App Development Using Kotlin courses</p>
+                            <p class="syllabusdivp2">Click here to see syllabus <span>+</span></p>
+                        </div>
+                        <hr>
+                        <div class="syllabusdiv">
+                            <p class="syllabusdivp1">R Programming Coursesd</p>
+                            <p class="syllabusdivp2">Click here to see syllabus <span>+</span></p>
+                        </div>
+                        <hr>
+                    </div>
+
+
+                </div>
+                <hr style="border: 1px dashed rgb(146, 146, 146); margin-top: 30px;">
+            </div>
+
+        </div>
+        <div class="middle"></div>
+        <div class="right">
+            <div class="courseName">
+                <p class="righttopp">Duration <b>25-30 Weeks</b></p>
+                <hr style="border: 1px dashed rgb(146, 146, 146);">
+                <h2 class="price">₹15999<span
+                        style="font-size:14px;text-decoration: line-through; color: grey;margin-left: 10px;">₹32999</span>
+                </h2>
+                <button class="pbtn">PROCEED TO CHECKOUT</button>
+                <P class="pp">or</P>
+                <button class="Ebtn">ENROLL NOW</button>
+            </div>
+
+            <div class="courseName mar">
+                <div class="ad">
+                    <div class="bg1">
+                        <h5>confused?</h5>
+                        <p>Leave us a query and we will call you soon.</p>
+                    </div>
+                    <div
+                        style="background-image: url(https://assets.interntheory.com/creative/haveQuestio.png); display:block; background-repeat: no-repeat;background-size: cover;background-position:center">
+                    </div>
+                </div>
+            </div>
+
+            <div class="courseName mar">
+                <p>Similar Courses</p>
+                <hr>
+                <div class="simcourdiv">
+                    <p class="simcourdiv1">Advanced Excel Courses</p>
+                    <p class="simcourdiv2">KNOW MORE <span
+                            style="font-size:13px;text-decoration:line-through; color: grey;margin-left: 210px;">₹5999</span>&nbsp&nbsp<span
+                            style="color: black;">₹2999</span>
+                    </p>
+
+                </div>
+                <hr>
+                <div class="simcourdiv">
+                    <p class="simcourdiv1">Web Development Courses</p>
+                    <p class="simcourdiv2">KNOW MORE <span
+                            style="font-size:13px;text-decoration:line-through; color: grey;margin-left: 210px;">₹7999</span>&nbsp&nbsp<span
+                            style="color: black;">₹3999</span>
+                    </p>
+
+                </div>
+                <hr>
+                <div class="simcourdiv">
+                    <p class="simcourdiv1">Data Analytics With R Programming Courses</p>
+                    <p class="simcourdiv2">KNOW MORE <span
+                            style="font-size:13px;text-decoration:line-through; color: grey;margin-left: 208px;">₹11999</span>&nbsp&nbsp<span
+                            style="color: black;">₹5999</span>
+                    </p>
+
+                </div>
+                <hr>
+
+            </div>
+
+
+        </div>
+        
+        <!-- close rigth part -->
+        
+</div>
+<div class="clear"></div>
+
+<div id="footer"></div>
+</body>
+
+</html>
+
+<script type="module">
+  import { product, showData, hello ,afterLogout} from './script/showData.js'
+  let localStorageData = JSON.parse(localStorage.getItem('studentDetail'))
+
+import { n12345, footer1235 } from './component/after_nav.js'
+import { n1234, footer123 } from './component/n123.js'
+
+
+if (localStorageData == null) {
+    document.getElementById('nn123').innerHTML = n1234();
+    document.getElementById('footer').innerHTML = footer123();
+}
+
+else {
+
+    document.getElementById('nn123').innerHTML = n12345();
+    document.getElementById('footer').innerHTML = footer1235();
+
+    afterLogout()
+        let name = document.getElementById('name');
+        name.innerText = localStorageData.first + " " +localStorageData.last;
+ 
+        let mail = document.getElementById('mail');
+        mail.innerText = localStorageData.email;
+        
+
+        let phno = document.getElementById('phno');
+        phno.innerText = localStorageData.mobile;
+
+        let profile_img1 = document.getElementById('profile_img1');
+        let profile_img2 = document.getElementById('profile_img2');
+       
+        if(localStorageData.Gender === "Male"){
+            profile_img1.src ="https://assets.interntheory.com/creative/default-images/guyProfile.jpg";
+            profile_img2.src ="https://assets.interntheory.com/creative/default-images/guyProfile.jpg";
+         }
+        else{
+            profile_img1.src ="https://assets.interntheory.com/creative/default-images/girlProfile.jpg";
+            profile_img2.src = "https://assets.interntheory.com/creative/default-images/girlProfile.jpg";
+        }
+}
+
+    let InternshipBtn = document.getElementById('InternshipBtn')
+    let jobsBtn = document.getElementById('jobsBtn')
+    InternshipBtn.addEventListener('click', () => { hello('Internship', 'All Internships') })
+    jobsBtn.addEventListener('click', () => { hello('Job', 'Fresher Jobs') })
+
+
+    $('.btn').click(function () {
+        $(this).toggleClass("click");
+        $('.sidebar').toggleClass("show");
+    });
+
+    $('.feat-btn').click(function () {
+        $('nav ul .feat-show').toggleClass("show");
+    });
+    $('.feat1-btn').click(function () {
+        $('nav ul .feat1-show').toggleClass("show1");
+    });
+    $('.feat2-btn').click(function () {
+        $('nav ul .feat2-show').toggleClass("show2");
+    });
+</script>

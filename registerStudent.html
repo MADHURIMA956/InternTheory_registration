@@ -1,0 +1,237 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Hire Interns and Freshers From India | Company Registration  | Intern Theory</title>
+    <link rel="stylesheet" href="./style/loginform.css">
+    <link rel="stylesheet" href="./style/temp.css">
+    <script src="https://code.jquery.com/jquery-3.5.0.js"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" />
+ <style>
+.inner-box{
+    width: 37%;
+}
+
+.m-zero{
+    margin: 1.5% 0;
+}
+
+.form>div:nth-child(1){
+    display: flex;
+}
+.form>div:nth-child(1)>input{
+    width: 44%;
+}
+
+@media only screen and (max-width:700px) {
+    .inner-box{
+        width: 100%;
+    }
+}
+
+@media only screen and (min-width:700px) and (max-width:1012px) {
+    .inner-box{
+        width: 60%;
+    }
+}
+
+
+ </style>
+</head>
+
+<body>
+    <div id="nn123"></div>
+    <div class="login">
+        <div class="inner-box">
+            <div>
+                <h2 class="m-zero">Register Candidate</h2>
+            </div>
+            <div>
+                <p class="m-zero">Already have an account?
+                    <a href="loginStudent.html">Sign in</a>
+                </p>
+            </div>
+            <div class='loginpara'>
+                <p>If you are a company looking to hire interns, please login as a company by clicking <a
+                        href="loginCompany.html">here</a>
+                </p>
+            </div>
+            <div class="fbGoogle bg-icon-color1">
+                <a href="">
+                    <span>
+                        <img class="iconImg"
+                            src="https://www.interntheory.com/assets/iconsLogos/facebook-circular-logo.svg" height="25">
+                        <span style="margin-left: 20%;">SIGNIN WITH FACEBOOK</span>
+                    </span>
+                </a>
+            </div>
+            <div class="fbGoogle bg-icon-color2">
+                <a href="">
+                    <span>
+                        <img class="iconImg" src="https://www.interntheory.com/assets/iconsLogos/googlelogo.svg"
+                            height="25">
+                        <span style="margin-left: 20%;">SIGNIN WITH GOOGLE</span>
+                    </span>
+                </a>
+            </div>
+            <div class="or">
+                <h5>OR</h5>
+            </div>
+            <div>
+                <form onsubmit="registerStudent(event)" class="form">
+                    <div>
+                        <input id="first" type="text" placeholder="first Name">
+                        <input id="last" type="text" placeholder="last Name">
+                    </div>
+                    <!-- <label for="email">Email/Number</label> -->
+                    <input type="text" placeholder="Email/Number*" id="email" required />
+                    <!-- <label for="password">Password</label> -->
+                    <input onclick="restForm()" type="password" placeholder="Password*" id="password" required />
+                    <div id="hide">
+                        <input id="mobile" type="num" placeholder="Mobile Number" required>
+                        <input id="city" type="text" placeholder="Select City" required>
+                        <input id="preference" type="text" placeholder="Preferences Select one or more *" required>
+                        <input id="howfind" type="text" placeholder="How did you find us *" required>
+                        <input id="lookingfor" type="text" placeholder="What are you looking for? *" required>
+                        <input id="affilate" type="text" placeholder="Affilate Code (if any)">
+                    </div>
+                    <button id="registerStudbtn" class="login_btn">Register</button>
+                </form>
+            </div>
+        </div>
+    </div>
+
+      <div id="footer"></div>
+</body>
+</html>
+<script>
+    let form=document.querySelector('form')
+   
+    let hideform=document.getElementById('hide')
+    hideform.style.display='none'
+   function restForm(){
+    hideform.style.display='block'
+    document.querySelector('.login').style.height='49rem'
+}
+   function registerStudent(e){
+       e.preventDefault()
+       let first=document.getElementById('first').value;
+       let last=document.getElementById('last').value;
+       let email=document.getElementById('email').value;
+       let password=document.getElementById('password').value;
+       let mobile=document.getElementById('mobile').value;
+       let city=document.getElementById('city').value;
+       let preference=document.getElementById('preference').value;
+       let howfind=document.getElementById('howfind').value;
+       let lookingfor=document.getElementById('lookingfor').value;
+       let affilate=document.getElementById('affilate').value;
+
+
+       let studentDetail={
+           first,
+           last,
+           email,
+           password,
+           mobile,
+           city,
+           preference,
+           howfind,
+           lookingfor,
+           affilate
+       }
+    //    if(localStorage.getItem('studentDetail')==null){
+    //        localStorage.setItem("studentDetail",JSON.stringify([]))
+    //    }
+    //    let local=JSON.parse(localStorage.getItem('studentDetail'))
+    //    local.push(studentDetail)
+
+    //    localStorage.setItem('studentDetail',JSON.stringify(local))
+    localStorage.setItem("studentDetail",JSON.stringify(studentDetail))
+       window.location.href='profile.html'
+
+
+       if(localStorage.getItem('studentDetail')==null){
+           localStorage.setItem("studentDetail",JSON.stringify([]))
+       }
+       let local=JSON.parse(localStorage.getItem('studentDetail'))
+       local.push(studentDetail)
+
+       localStorage.setItem('studentDetail',JSON.stringify(local))
+       window.location.href='index.html'
+
+    //    console.log(studentDetail)
+
+    } 
+</script>
+
+<script type="module">
+
+import { product, showData, hello ,afterLogout} from './script/showData.js'
+let localStorageData = JSON.parse(localStorage.getItem('studentDetail'))
+
+import { n12345, footer1235 } from './component/after_nav.js'
+import { n1234, footer123 } from './component/n123.js'
+
+
+if (localStorageData == null) {
+    document.getElementById('nn123').innerHTML = n1234();
+    document.getElementById('footer').innerHTML = footer123();
+}
+
+else {
+
+        document.getElementById('nn123').innerHTML = n12345();
+        document.getElementById('footer').innerHTML = footer1235();
+
+        afterLogout()
+        let name = document.getElementById('name');
+        name.innerText = localStorageData.first + " " +localStorageData.last;
+ 
+        let mail = document.getElementById('mail');
+        mail.innerText = localStorageData.email;
+        
+
+        let phno = document.getElementById('phno');
+        phno.innerText = localStorageData.mobile;
+
+        let profile_img1 = document.getElementById('profile_img1');
+        let profile_img2 = document.getElementById('profile_img2');
+       
+        if(localStorageData.Gender === "Male"){
+            profile_img1.src ="https://assets.interntheory.com/creative/default-images/guyProfile.jpg";
+            profile_img2.src ="https://assets.interntheory.com/creative/default-images/guyProfile.jpg";
+         }
+        else{
+            profile_img1.src ="https://assets.interntheory.com/creative/default-images/girlProfile.jpg";
+            profile_img2.src = "https://assets.interntheory.com/creative/default-images/girlProfile.jpg";
+        }
+}
+
+    let InternshipBtn = document.getElementById('InternshipBtn')
+    let jobsBtn = document.getElementById('jobsBtn')
+    InternshipBtn.addEventListener('click', () => { hello('Internship', 'All Internships') })
+    jobsBtn.addEventListener('click', () => { hello('Job', 'Fresher Jobs') })
+
+
+    $('.btn').click(function () {
+        $(this).toggleClass("click");
+        $('.sidebar').toggleClass("show");
+    });
+
+    $('.feat-btn').click(function () {
+        $('nav ul .feat-show').toggleClass("show");
+    });
+    $('.feat1-btn').click(function () {
+        $('nav ul .feat1-show').toggleClass("show1");
+    });
+    $('.feat2-btn').click(function () {
+        $('nav ul .feat2-show').toggleClass("show2");
+    });
+
+
+
+
+</script>

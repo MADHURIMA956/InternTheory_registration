@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Offline Courses | Intern Theory</title>
+
+    <link rel="stylesheet" href="./style/courses.css">
+    <script src="https://code.jquery.com/jquery-3.5.0.js"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" />
+    <link rel="stylesheet" href="./style/temp.css">
+</head>
+
+<body>
+    <!-- <div>
+        navbar space
+    </div> -->
+    <div id="nn123"></div>
+
+    <div>
+        <div id="heading">
+            <img src="https://assets.interntheory.com/creative/courses/listpage/Course-banner1.png">
+        </div>
+        <div class="intro">
+            <h4>Certified Online Courses</h4>
+            <p>Upgrade your skills with Intern Theory's online learning platform. Enrol for any certified online
+                courses and get a step ahead of competition. Select from a range of skill based online courses and
+                kickstart your career.
+            </p>
+        </div>
+    </div>
+    <div>
+        <div id="details">
+            <div id="online_course">
+                <!-- code excute by javascript -->
+            </div>
+        </div>
+    </div>
+
+    <div id="footer"></div>
+
+
+
+
+</body>
+
+</html>
+<script type="text/javascript" src="script/courses.js"></script>
+
+<script type="module">
+    import { product, showData, hello,afterLogout } from './script/showData.js'
+    let localStorageData = JSON.parse(localStorage.getItem('studentDetail'))
+
+import { n12345, footer1235 } from './component/after_nav.js'
+import { n1234, footer123 } from './component/n123.js'
+
+
+if (localStorageData == null) {
+    document.getElementById('nn123').innerHTML = n1234();
+    document.getElementById('footer').innerHTML = footer123();
+}
+
+else {
+
+    document.getElementById('nn123').innerHTML = n12345();
+    document.getElementById('footer').innerHTML = footer1235();
+
+    afterLogout()
+        let name = document.getElementById('name');
+        name.innerText = localStorageData.first + " " +localStorageData.last;
+ 
+        let mail = document.getElementById('mail');
+        mail.innerText = localStorageData.email;
+        
+
+        let phno = document.getElementById('phno');
+        phno.innerText = localStorageData.mobile;
+
+      
+        let profile_img1 = document.getElementById('profile_img1');
+        let profile_img2 = document.getElementById('profile_img2');
+       
+        if(localStorageData.Gender === "Male"){
+            profile_img1.src ="https://assets.interntheory.com/creative/default-images/guyProfile.jpg";
+            profile_img2.src ="https://assets.interntheory.com/creative/default-images/guyProfile.jpg";
+         }
+        else{
+            profile_img1.src ="https://assets.interntheory.com/creative/default-images/girlProfile.jpg";
+            profile_img2.src = "https://assets.interntheory.com/creative/default-images/girlProfile.jpg";
+        }
+}
+
+    let InternshipBtn = document.getElementById('InternshipBtn')
+    let jobsBtn = document.getElementById('jobsBtn')
+    InternshipBtn.addEventListener('click', () => { hello('Internship', 'All Internships') })
+    jobsBtn.addEventListener('click', () => { hello('Job', 'Fresher Jobs') })
+
+
+    $('.btn').click(function () {
+        $(this).toggleClass("click");
+        $('.sidebar').toggleClass("show");
+    });
+
+    $('.feat-btn').click(function () {
+        $('nav ul .feat-show').toggleClass("show");
+    });
+    $('.feat1-btn').click(function () {
+        $('nav ul .feat1-show').toggleClass("show1");
+    });
+    $('.feat2-btn').click(function () {
+        $('nav ul .feat2-show').toggleClass("show2");
+    });
+
+</script>
+
+
+<script>
+    var ab = document.getElementById('cart_logo');
+
+    // console.log(ab)
+    // document.getElementById("cart_logo").addEventListener("click",()=>{
+
+    //     //window.location.href="cart.html";
+    //     console.log("zxcvzxvbxzb")
+    // })
+</script>

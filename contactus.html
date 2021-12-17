@@ -1,0 +1,147 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contact Us|Intern Theory</title>
+      <link rel="stylesheet" href="./style/contactus.css">
+      <link rel="stylesheet" href="./style/temp.css">
+      <script src="https://code.jquery.com/jquery-3.5.0.js"></script>
+      <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" />
+
+</head>
+<body>
+    
+    <div id="nn123"></div>
+
+    <div id="contactus">
+
+        <div id="leftcontactdiv">
+            <h3>Contact</h3>
+            <p>Have something to say? Give us a Holler anyone of the ways below,and we'll get back within 24 hours. On a side note,like the rest around us, we have fallen victims to social Media. Feel free to get in touch on Facebook,linkedin or Instagram anytime! </p>
+               <div id="contact_info">
+                <input type="text" placeholder="Email Address" id="email">
+                <input type="number" placeholder="Mobile no" id="moble">
+              <input type="text" placeholder="Subject" id="subject">
+              <textarea placeholder=" Enter Message" id="message" cols="30" rows="5"></textarea>
+
+           </div>
+             <div>
+                <button id="submitmessage" onsubmit="func()" >SUBMIT</button>
+
+             </div>
+
+              
+                    <div id="ftilwpicon">
+
+                        <a>
+                            <img src="https://coindoo.com/wp-content/uploads/2019/01/facebook-icon.png" alt="">
+                        </a>
+     <a>
+         <img src="https://th.bing.com/th/id/R.9a3a06f78cc0a8d79fce59e2de6da146?rik=nLAu3Z%2f0QUb%2fVw&riu=http%3a%2f%2ficons.iconarchive.com%2ficons%2fiynque%2fios7-style%2f1024%2fTwitter-icon.png&ehk=eD3Hc5yQAyP3AKPJoYHB8yeWKwKdaVAswR5kxmodex4%3d&risl=&pid=ImgRaw&r=0" alt="">
+     
+     </a>
+           <a href="#">
+               <img src="https://th.bing.com/th/id/OIP.JtmXSh_uyZBaTg1eXd-NtgHaHa?pid=ImgDet&rs=1" alt="">
+           </a>
+            
+           <a href="#">
+               <img src="https://th.bing.com/th/id/R.ef7c744be2f78c8dc1fd6c9ec2b22c33?rik=sa128jy3lFgTGA&riu=http%3a%2f%2fwww.northernlightspr.com%2fwp-content%2fuploads%2f2015%2f08%2fLinkedIn.png&ehk=WtYCQF7SDlWe7q876gDwMKqIoUoj%2b8g%2bMGm84pQDxUo%3d&risl=&pid=ImgRaw&r=0" alt="">
+           </a>
+           <a href="#">
+               <img src="https://d.ibtimes.co.uk/en/full/1434918/whatsapp-voice-call-iphone.jpg?w=400" alt="">
+           </a>
+           </div>
+
+                   <div class="ftilwp">
+          <p>OR</p>
+          <p>call:+91 81047 73673</p>
+        
+                </div>
+        </div>
+
+
+        <div id="rightcontactdiv">
+            <img src="https://cdn.filestackcontent.com/qfzkumr0RE27pdC8tqeH" alt="">
+        </div>
+           
+    </div>
+
+
+     <div id="footer"></div>
+
+</body>
+</html>
+
+<script type="module">
+    function func(){
+        alert("successfully submitted");
+    }    
+
+    import { product, showData, hello,afterLogout } from './script/showData.js'
+    let localStorageData = JSON.parse(localStorage.getItem('studentDetail'))
+
+    import { n12345, footer1235 } from './component/after_nav.js'
+    import { n1234, footer123 } from './component/n123.js'
+
+
+    if (localStorageData == null) {
+        document.getElementById('nn123').innerHTML = n1234();
+        document.getElementById('footer').innerHTML = footer123();
+    }
+
+    else {
+
+        document.getElementById('nn123').innerHTML = n12345();
+        document.getElementById('footer').innerHTML = footer1235();
+
+        afterLogout()
+        let name = document.getElementById('name');
+        name.innerText = localStorageData.first + " " +localStorageData.last;
+ 
+        let mail = document.getElementById('mail');
+        mail.innerText = localStorageData.email;
+
+        let phno = document.getElementById('phno');
+        phno.innerText = localStorageData.mobile;
+
+    
+        let profile_img1 = document.getElementById('profile_img1');
+        let profile_img2 = document.getElementById('profile_img2');
+       
+        if(localStorageData.Gender === "Male"){
+            profile_img1.src ="https://assets.interntheory.com/creative/default-images/guyProfile.jpg";
+            profile_img2.src ="https://assets.interntheory.com/creative/default-images/guyProfile.jpg";
+         }
+        else{
+            profile_img1.src ="https://assets.interntheory.com/creative/default-images/girlProfile.jpg";
+            profile_img2.src = "https://assets.interntheory.com/creative/default-images/girlProfile.jpg";
+        }
+    }
+   
+       let InternshipBtn = document.getElementById('InternshipBtn')
+       let jobsBtn = document.getElementById('jobsBtn')
+       InternshipBtn.addEventListener('click', () => { hello('Internship', 'All Internships') })
+       jobsBtn.addEventListener('click', () => { hello('Job', 'Fresher Jobs') })
+   
+   
+       $('.btn').click(function () {
+           $(this).toggleClass("click");
+           $('.sidebar').toggleClass("show");
+       });
+   
+       $('.feat-btn').click(function () {
+           $('nav ul .feat-show').toggleClass("show");
+       });
+       $('.feat1-btn').click(function () {
+           $('nav ul .feat1-show').toggleClass("show1");
+       });
+       $('.feat2-btn').click(function () {
+           $('nav ul .feat2-show').toggleClass("show2");
+       });
+   
+     
+   
+   </script>

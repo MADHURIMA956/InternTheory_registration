@@ -1,0 +1,520 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Internships In India | Summer Internships | Winter Internships | Intern Theory</title>
+    <link rel="stylesheet" href="./style/internship&job.css">
+    <link rel="stylesheet" href="./style/temp.css">
+    <!-- <link rel="stylesheet" href="./style/navbar.css"> -->
+    <script src="https://code.jquery.com/jquery-3.5.0.js"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" />
+
+</head>
+
+<body>
+    
+    <div id="nn123"></div>
+
+    <div id="main">
+        <div id="yo">
+            <div class="multipleSelection">
+                <div class="selectBox" onclick="showCheckboxes()">
+                    <select  id="option">
+                        <option>Cities...</option>
+                    </select>
+                    <div class="overSelect"></div>
+                </div>
+
+                <div id="checkBoxes" style="height: 160px;" class="cb1 filter">
+                    <label><input type="checkbox" class="city" rel='Delhi' onchange="change()" id="first" />Delhi</label>
+                    <label><input type="checkbox" class="city" rel='Pune' onchange="change()" id="second" />Pune</label>
+                    <label><input type="checkbox" class="city" rel='Jaipur' onchange="change()" id="third" />Jaipur</label>
+                    <label><input type="checkbox" class="city" rel='Mumbai' onchange="change()" id="fourth" />Mumbai</label>
+                    <label><input type="checkbox" class="city" rel='Kolkata' onchange="change()" id="five" />Kolkata</label>
+                    <label><input type="checkbox" class="city" rel='Gurgaon' onchange="change()" id="six" />Gurgaon</label>
+                </div>
+            </div>
+
+
+            <div class="multipleSelection" id="toggletype">
+                <div class="selectBox" onclick="showCheckboxes1()">
+                    <select id="option">
+                        <option>Type...</option>
+                    </select>
+                    <div class="overSelect"></div>
+                </div>
+
+                <div id="checkBoxes1" class="cb1 filter">
+                    <label for="first"><input type="checkbox" class="wtype" rel='Full Time' onchange="change()" />Full
+                        Time</label>
+                    <label for="second"><input type="checkbox" class="wtype" rel='Part Time' onchange="change()" />Part
+                        Time</label>
+                    <label for="third"><input type="checkbox" class="wtype" rel='Work From Home'
+                            onchange="change()" />Work
+                        From Home</label>
+                </div>
+            </div>
+
+
+            <div class="multipleSelection">
+                <div class="selectBox" onclick="showCheckboxes2()">
+                    <select id="option">
+                        <option>Preference...</option>
+                    </select>
+                    <div class="overSelect"></div>
+                </div>
+
+                <div id="checkBoxes2" style="height: 260px;" class="cb1 filter">
+                    <label><input type="checkbox" class="preference" id="pref1" rel='Content Writing'
+                            onchange="change()" />Content Writing</label>
+                    <label><input type="checkbox" class="preference" id="pref2" rel='Business Strategy'
+                            onchange="change()" />Business Strategy</label>
+                    <label><input type="checkbox" class="preference" id="pref3" rel='Software Development'
+                            onchange="change()" />Software Development</label>
+                    <label><input type="checkbox" class="preference" id="pref4" rel='E-Commerce'
+                            onchange="change()" />E-Commerce</label>
+                    <label><input type="checkbox" class="preference" id="pref5" rel='Product Designing'
+                            onchange="change()" />Product Designing</label>
+                    <label><input type="checkbox" class="preference" id="pref6" rel='Marketing'
+                            onchange="change()" />Marketing</label>
+                    <label><input type="checkbox" class="preference" id="pref7" rel='Graphic Designing'
+                            onchange="change()" />Graphic Designing</label>
+                    <label><input type="checkbox" class="preference" id="pref8" rel='Finance'
+                            onchange="change()" />Finance</label>
+                    <label><input type="checkbox" class="preference" id="pref9" rel='Human Resource'
+                            onchange="change()" />Human Resource</label>
+                    <label><input type="checkbox" class="preference" id="pref10" rel='Engineering'
+                            onchange="change()" />Engineering</label>
+                </div>
+            </div>
+
+            <div>
+                <p>OR</p>
+            </div>
+
+            <div id="filterDiv">
+                <div>
+                    <input id="filterInput" type="text" placeholder="Search...">
+                    <button id="filterBtn" onclick="filiterSearchButton()">SEARCH</button>
+                </div>
+
+
+            </div>
+
+        </div>
+    </div>
+    <div id="internAndJobContainer">
+        <div id="addvertisment">
+            <img src="https://assets.interntheory.com/creative/Internship_left_course_add_02.png" alt="addvertisment">
+        </div>
+
+        <div id="dis">
+
+        </div>
+    </div>
+
+
+    <div id="footer"></div>
+</body>
+
+</html>
+
+<script type="module">
+    import { product, showData, hello , afterLogout} from './script/showData.js'
+    let localStorageData = JSON.parse(localStorage.getItem('studentDetail'))
+
+import { n12345, footer1235 } from './component/after_nav.js'
+import { n1234, footer123 } from './component/n123.js'
+
+
+if (localStorageData == null) {
+    document.getElementById('nn123').innerHTML = n1234();
+    document.getElementById('footer').innerHTML = footer123();
+}
+
+else {
+
+    document.getElementById('nn123').innerHTML = n12345();
+    document.getElementById('footer').innerHTML = footer1235();
+
+    afterLogout();
+    
+        let name = document.getElementById('name');
+        name.innerText = localStorageData.first + " " +localStorageData.last;
+ 
+        let mail = document.getElementById('mail');
+        mail.innerText = localStorageData.email;
+
+        let phno = document.getElementById('phno');
+        phno.innerText = localStorageData.mobile;
+
+        let profile_img1 = document.getElementById('profile_img1');
+        let profile_img2 = document.getElementById('profile_img2');
+       
+        if(localStorageData.Gender === "Male"){
+            profile_img1.src ="https://assets.interntheory.com/creative/default-images/guyProfile.jpg";
+            profile_img2.src ="https://assets.interntheory.com/creative/default-images/guyProfile.jpg";
+         }
+        else{
+            profile_img1.src ="https://assets.interntheory.com/creative/default-images/girlProfile.jpg";
+            profile_img2.src = "https://assets.interntheory.com/creative/default-images/girlProfile.jpg";
+        }
+}
+
+    let InternshipBtn = document.getElementById('InternshipBtn')
+    let jobsBtn = document.getElementById('jobsBtn')
+    InternshipBtn.addEventListener('click', () => { hello('Internship', 'All Internships') })
+    jobsBtn.addEventListener('click', () => { hello('Job', 'Fresher Jobs') })
+
+
+    $('.btn').click(function () {
+        $(this).toggleClass("click");
+        $('.sidebar').toggleClass("show");
+    });
+
+    $('.feat-btn').click(function () {
+        $('nav ul .feat-show').toggleClass("show");
+    });
+    $('.feat1-btn').click(function () {
+        $('nav ul .feat1-show').toggleClass("show1");
+    });
+    $('.feat2-btn').click(function () {
+        $('nav ul .feat2-show').toggleClass("show2");
+    });
+
+  
+
+</script>
+
+
+
+
+<script>
+
+    function showData(x, dis, heading11) {
+        dis.innerHTML = null;
+        let hh = document.createElement('h1')
+        hh.innerText = heading11;
+        hh.id = 'hh';
+        dis.append(hh)
+
+        x.forEach((el) => {
+            let img = document.createElement('img')
+            img.src = el.image;
+            let box1 = document.createElement('div')
+            box1.append(img)
+
+            let position = document.createElement('h2')
+            position.innerText = el.position;
+
+            let cname = document.createElement('h5')
+            cname.innerText = el.cname;
+
+            let Category = document.createElement('p')
+            Category.innerText = el.Category;
+
+            let location = document.createElement('p')
+            location.innerText = el.location;
+
+            let salary = document.createElement('p')
+            salary.textContent = el.salary;
+
+            let box2 = document.createElement('div')
+            box2.id = 'box2'
+            box2.append(position, cname, Category, location, salary)
+
+            let box3 = document.createElement('div')
+            box3.id = 'box3'
+            let viewandApplybtn = document.createElement('button')
+            let weeks = document.createElement("p")
+            if (el.catType == "addvertise") {
+                viewandApplybtn.innerText = 'UPGRADE SKILLS';
+                viewandApplybtn.onclick = function () {
+                    window.location.href = 'courses.html';
+                }
+                weeks.innerText = '4-6 weeks left'
+            }
+            else {
+
+                viewandApplybtn.innerText = 'VIEW AND APPLY';
+
+                viewandApplybtn.onclick = function () {
+                    localStorage.setItem('jobdetails', JSON.stringify(el))
+                    window.location.href = 'detailPage.html';
+                }
+                weeks.innerText = '4 weeks left'
+            }
+
+
+            let share = document.createElement('img')
+            share.id = 'shareimg'
+            share.src = "share.svg"
+
+
+            box3.append(weeks, share, viewandApplybtn)
+
+            let box4 = document.createElement('div')
+            box4.id = 'box4';
+            box4.append(box1, box2, box3)
+            dis.append(box4)
+        })
+
+        let div = document.createElement('div')
+        div.id = 'emptyDiv'
+
+        let img = document.createElement('img')
+        img.id = 'emptyImg'
+        img.src = "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQl4wSxyjL-iMSZzRsJcU7wQT1UZzjzuExm7w&usqp=CAU"
+
+        let heading = document.createElement('h5')
+        heading.id = 'emptyHead'
+        heading.innerText = "OOPS ! We couldn't match your calibre"
+        let p1 = document.createElement('p')
+        p1.innerText = 'Unfortunately companies are not looking to hire interns for the filters you applied.'
+
+        let p2 = document.createElement('p')
+        p2.innerText = 'If you are looking for something specific which you can not find,'
+
+        let p3 = document.createElement('p')
+        p3.innerText = 'please mail us on studentfeedback@interntheory.com'
+
+        let p4 = document.createElement('p')
+        p4.id = 'emptyPera4'
+        p4.innerText = 'End of search results.'
+        div.append(img, heading, p1, p2, p3, p4)
+        dis.append(div)
+
+        if(x.length==1)
+        div.style.display="block";
+        else
+            div.style.display="none";
+
+    }
+
+    let dis = document.getElementById('dis')
+    let filterData = JSON.parse(localStorage.getItem('filterData'))
+    // console.log(filterData)
+    let heading11 = JSON.parse(localStorage.getItem('heading'))
+
+
+
+    function filiterSearchButton() {
+        let filterInput = document.getElementById('filterInput').value;
+        if (filterInput.length != 0) {
+            let filtersearch = filterData.filter((el) => {
+               
+                return el.Category.includes(filterInput)
+            })
+            // console.log(filtersearch)
+            filtersearch.unshift(filterData[0])
+            showData(filtersearch, dis, heading11)
+        } else {
+            showData(filterData, dis, heading11)
+        }
+
+    }
+
+
+    if (heading11 == "Fresher Jobs") {
+        document.getElementById('toggletype').style.display = "none";
+        showData(filterData, dis, heading11)
+    }
+
+    else if (heading11 == "Marketing Internships") {
+        document.getElementById('pref6').checked = true;
+        change()
+        heading11 = "Internships";
+    }
+    else if (heading11 == "Business Development Internships") {
+        document.getElementById('pref2').checked = true;
+        change()
+        heading11 = "Internships";
+    }
+    else if (heading11 == "Content Writing Internships") {
+        document.getElementById('pref1').checked = true;
+        change()
+        heading11 = "Internships";
+    }
+    else if (heading11 == "Graphic Designing Internships") {
+        document.getElementById('pref7').checked = true;
+        change()
+        heading11 = "Internships";
+    }
+
+    else if (heading11 == "Finance Internships") {
+        document.getElementById('pref8').checked = true;
+        change()
+        heading11 = "Internships";
+    }
+    else if (heading11 == "Human Resource Internships") {
+        document.getElementById('pref9').checked = true;
+        change()
+        heading11 = "Internships";
+    }
+    else if (heading11 == "Engineering Internships") {
+        document.getElementById('pref10').checked = true;
+        change()
+        heading11 = "Internships";
+    }
+    else {
+        showData(filterData, dis, heading11)
+    }
+
+
+    function change() {
+
+        modelsChecked = document.querySelectorAll('.filter input.city:checked')
+        typeChecked = document.querySelectorAll('.filter input.wtype:checked')
+        preferenceChecked = document.querySelectorAll('.filter input.preference:checked')
+        // console.log(preferenceChecked)
+
+        let list1 = []
+        let list2 = []
+        let list3 = []
+
+        list1.push(filterData[0])
+        list2.push(filterData[0])
+        list3.push(filterData[0])
+
+        filterofCity(modelsChecked, filterData)
+        filteroftype(typeChecked, filterData)
+        filterofpreference(preferenceChecked, filterData)
+        // console.log(list1)
+        // console.log(list2)
+        // console.log(list3)
+
+        if (modelsChecked.length == 0 && typeChecked.length == 0 && preferenceChecked.length == 0) {
+            showData(filterData, dis, heading11)
+        }
+        else if (typeChecked.length == 0 && preferenceChecked.length == 0) {
+            showData(list1, dis, heading11)
+        }
+        else if (modelsChecked.length == 0 && preferenceChecked.length == 0) {
+            showData(list2, dis, heading11)
+        }
+        else if (modelsChecked.length == 0 && typeChecked.length == 0) {
+            showData(list3, dis, heading11)
+        }
+
+        else if (modelsChecked.length == 0) {
+            let x = compareTwo(list2, list3)
+            showData(x, dis, heading11)
+        }
+
+        else if (typeChecked.length == 0) {
+            let x = compareTwo(list1, list3)
+            showData(x, dis, heading11)
+        }
+
+        else if (preferenceChecked.length == 0) {
+            let x = compareTwo(list1, list2)
+            showData(x, dis, heading11)
+        }
+
+        else {
+            let x = compareTwo(list1, list2)
+            let y = compareTwo(x, list3)
+            showData(y, dis, heading11)
+        }
+
+        function compareTwo(list1, list2) {
+            let result = []
+            for (let i = 0; i < list1.length; i++) {
+                for (let j = 0; j < list2.length; j++) {
+                    if (list1[i].image == list2[j].image) {
+                        result.push(list1[i])
+                        break;
+                    }
+                }
+            }
+            return result;
+        }
+
+
+        function filterofCity(x, y) {
+            for (let i = 0; i < x.length; i++) {
+                let pk = x[i].getAttribute("rel")
+                for (let j = 0; j < y.length; j++) {
+                    if (y[j].location.includes(pk)) {
+                        list1.push(y[j])
+                    }
+                }
+            }
+        }
+
+        function filteroftype(x, y) {
+            for (let i = 0; i < x.length; i++) {
+                let pk = x[i].getAttribute("rel")
+                for (let j = 0; j < y.length; j++) {
+                    if (y[j].type.includes(pk)) {
+                        list2.push(y[j])
+                    }
+                }
+            }
+        }
+
+
+
+        function filterofpreference(x, y) {
+            for (let i = 0; i < x.length; i++) {
+                let pk = x[i].getAttribute("rel")
+                // console.log(pk)
+                for (let j = 0; j < y.length; j++) {
+                    // console.log(y[j].Category);
+                    if (y[j].Category.includes(pk)) {
+                        list3.push(y[j])
+                    }
+                }
+            }
+        }
+    }
+
+
+
+
+    let show = true;
+    function showCheckboxes() {
+        let checkboxes =
+            document.getElementById("checkBoxes");
+
+        if (show) {
+            checkboxes.style.display = "block";
+            show = false;
+        } else {
+            checkboxes.style.display = "none";
+            show = true;
+        }
+    }
+
+
+    let show1 = true;
+    function showCheckboxes1() {
+        let checkboxes1 =
+            document.getElementById("checkBoxes1");
+
+        if (show1) {
+            checkboxes1.style.display = "block";
+            show1 = false;
+        } else {
+            checkboxes1.style.display = "none";
+            show1 = true;
+        }
+    }
+
+    let show2 = true;
+    function showCheckboxes2() {
+        let checkboxes2 = document.getElementById("checkBoxes2");
+
+        if (show2) {
+            checkboxes2.style.display = "block";
+            show2 = false;
+        } else {
+            checkboxes2.style.display = "none";
+            show2 = true;
+        }
+    }
+
+</script>

@@ -1,0 +1,117 @@
+
+              #contactus{
+                  width: 100%;
+                  height: 700px;
+                  display: flex;
+                  margin-top: 100px;
+                  margin-bottom:   100px;
+                  
+              }
+              #contactus div{
+                  width:45%;
+                  margin: 1%;
+                 
+              }
+              #leftcontactdiv{
+                  padding:10px;
+    
+              }
+              #leftcontactdiv h3{
+                   color:rgba(0,0,0,0.87);
+                   background-color:rgba(0,0,0,0);
+                   font-size:48px;
+                   line-height:50px;
+                   vertical-align: baseline;
+                   margin: 0;
+                   padding:0;
+                   font-weight: 400;
+    
+              }
+              #leftcontactdiv p{
+                color: #3c4858;
+                background-color:rgba(0,0,0,0);
+                font-family: Roboto, Helvetica, Arial, sans-serif;
+      font-size: 16px;
+      line-height:24px;
+        vertical-align: baseline;
+        letter-spacing: 0.15px;
+        word-spacing:0;
+        margin: 0;
+        padding:10px;
+           font-weight: 400;
+           font-style: normal;
+    
+    
+              }
+             
+    
+                #contact_info input {
+                  outline: none;
+                    width: 200%;
+                    height:25px;
+                    font-size: 16px;
+                    margin: 0;
+                    margin-top: 20px;
+                    padding: 6px 0px 7px 5px;
+                    font-weight: 400;
+                    font-style: normal;
+                    border: none;
+                    border-bottom: 2px solid black;
+                }
+          #message{
+              margin-top: 15px;
+              font-size: 16px;
+              width: 200%;
+          }
+         #submitmessage{
+        background-color:#DF1E2E;
+        padding:6px 16px;
+        font-size: 16px;
+        color: #ffffff;
+        border-radius: 5px;
+        margin-left: 50%;
+         }
+         #submitmessage:hover{
+            background-color:#b31c29;
+            
+         }
+         .ftilwp {
+             padding-left: 10%;
+             height:100px;
+             width:70%;
+              text-align:center;
+             
+             padding-top: 20px;
+            
+         }
+        
+         .ftilwp p{
+             font-size:14px;
+             line-height:21px;
+             font-weight:400;
+             margin: 0;
+             padding: 0;
+             color: rgb(60 ,72,88);
+    
+             text-align:center;
+    
+         }
+        #ftilwpicon{
+             padding-left: 5%;
+            padding: 5px;
+            margin:  auto;
+            height:50px;
+           
+        }
+      #ftilwpicon a img{
+          width:30px; height:30px;
+        
+         
+      }
+     
+      #rightcontactdiv img{
+          width:100%;
+          height:100%;
+      }
+    
+     

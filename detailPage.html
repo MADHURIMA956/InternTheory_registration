@@ -1,0 +1,317 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>All Internships</title>
+    <link rel="stylesheet" href="./style/internship&job.css">
+    <link rel="stylesheet" href="./style/temp.css">
+    <script src="https://code.jquery.com/jquery-3.5.0.js"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" />
+    <style>
+        #detailContainer {
+            background-color: white;
+            padding: 1.3rem;
+        }
+
+        #detailContainer>div {
+            /* border-bottom: 2px dashed rgb(224, 224, 224); */
+            margin: 0.6rem 0;
+            padding: 0.6rem 0;
+        }
+
+        #detailContainer>:nth-child(1),
+        #detailContainer>:nth-child(2) {
+            border-bottom: 2px dashed rgb(224, 224, 224);
+
+        }
+
+        #partCont1 {
+            display: grid;
+            grid-template-columns: 20% 60%;
+
+        }
+
+        #imageDetail {
+            max-width: 100%;
+            height: 6rem;
+        }
+
+        #detailPart1 {
+            margin: auto;
+        }
+
+
+
+        #detailPart2 {
+            margin-left: 0rem;
+            font-size: medium;
+            color: gray;
+        }
+
+
+        #detailPart2 h2 {
+            margin: 0px 0px 5px;
+            color: black;
+            font-size: 20px;
+            font-weight: 400;
+            line-height: 1.6;
+            letter-spacing: 0.0075em;
+        }
+
+        #detailPart2 h3,
+        p {
+            margin: 0px 0px 5px;
+            font-size: .875rem;
+        }
+
+        #btn {
+            border-radius: 10px;
+            padding: 9px 15px;
+            margin-left: 0.3rem;
+            border: none;
+        }
+
+        #applybtndiv {
+            display: flex;
+            justify-content: flex-end;
+        }
+
+        #applybtn1 {
+            border: none;
+            background-color: white;
+            color: blue;
+            cursor: pointer;
+        }
+
+        #applybtn2 {
+            background-color: #DF1E2E;
+            color: white;
+            cursor: pointer;
+            border-radius: 6px;
+            padding: 0.7rem 1rem;
+            border: none;
+        }
+
+        #popupMessage {
+            display: flex;
+            justify-content: space-between;
+            position: fixed;
+           
+            z-index: 20;
+            box-shadow: 0px 2px 2px -1px rgb(0 0 0 / 20%);
+            left: 47vw;
+          
+            width: 40rem;
+            height: 3rem;
+            text-align: center;
+            border-radius: 4px;
+            color: #fff;
+            background-color: #ffa000;
+        }
+    </style>
+</head>
+
+<body>
+
+    <div id="nn123"></div>
+
+    <div id="internAndJobContainer1" class="internAndJobContainer">
+        <div id="addvertisment">
+            <img src="https://assets.interntheory.com/creative/Internship_left_course_add_02.png" alt="addvertisment">
+        </div>
+        <div id="detailContainer">
+            <div id="partCont1">
+                <div id="detailPart1" class="detailImg">
+                    <img id="imageDetail" src="" alt="">
+                </div>
+                <div id="detailPart2" class="detailheading">
+                    <h2 id="detailPart3"></h2>
+                    <h3 id="detailPart4"></h3>
+                    <p id="detailPart5"></p>
+                    <p> <span id="detailPart6"></span> <span id="detailPart7"></span></p>
+                </div>
+            </div>
+
+            <div id="partCont2">
+                <p id="pc1"></p>
+                <p id="pc2"></p>
+                <p id="pc3"></p>
+                <p id="pc4"></p>
+
+                <h4 id="pch1">Job Description:</h4>
+                <div id="discript">
+
+                </div>
+                <h4 id="pch2">Perks</h4>
+                <p id="pc5"></p>
+
+
+                <h4 id="pch3"> Prefered Skills</h4>
+                <div id="skillBtn">
+
+                </div>
+            </div>
+
+            <div id="partCont3">
+                <h4 id="pch31">Company Description</h4>
+                <p id="pc6"></p>
+
+                <h4 id="pch32">Location</h4>
+                <p id="pc7"></p>
+            </div>
+
+            <div id="applybtndiv">
+                <button id="applybtn1">BACK TO INTERNSHIP</button>
+                <button id="applybtn2">APPLY</button>
+
+            </div>
+        </div>
+
+
+    </div>
+
+    <div id="footer">
+
+
+    </div>
+
+</body>
+
+</html>
+
+<script type="module">
+
+    import { product, showData, hello ,afterLogout} from './script/showData.js'
+    let localStorageData = JSON.parse(localStorage.getItem('studentDetail'))
+
+import { n12345, footer1235 } from './component/after_nav.js'
+import { n1234, footer123 } from './component/n123.js'
+
+let flag=0
+if (localStorageData == null) {
+    flag=0
+    document.getElementById('nn123').innerHTML = n1234();
+    document.getElementById('footer').innerHTML = footer123();
+}
+
+else {
+
+    document.getElementById('nn123').innerHTML = n12345();
+    document.getElementById('footer').innerHTML = footer1235();
+    afterLogout()
+    flag=1;
+        let name = document.getElementById('name');
+        name.innerText = localStorageData.first + " " +localStorageData.last;
+ 
+        let mail = document.getElementById('mail');
+        mail.innerText = localStorageData.email;
+        
+
+
+        let phno = document.getElementById('phno');
+        phno.innerText = localStorageData.mobile;
+
+       
+        let profile_img1 = document.getElementById('profile_img1');
+        let profile_img2 = document.getElementById('profile_img2');
+       
+        if(localStorageData.Gender === "Male"){
+            profile_img1.src ="https://assets.interntheory.com/creative/default-images/guyProfile.jpg";
+            profile_img2.src ="https://assets.interntheory.com/creative/default-images/guyProfile.jpg";
+         }
+        else{
+            profile_img1.src ="https://assets.interntheory.com/creative/default-images/girlProfile.jpg";
+            profile_img2.src = "https://assets.interntheory.com/creative/default-images/girlProfile.jpg";
+        }
+}
+
+    let InternshipBtn = document.getElementById('InternshipBtn')
+    let jobsBtn = document.getElementById('jobsBtn')
+    InternshipBtn.addEventListener('click', () => { hello('Internship', 'All Internships') })
+    jobsBtn.addEventListener('click', () => { hello('Job', 'Fresher Jobs') })
+
+
+    $('.btn').click(function () {
+        $(this).toggleClass("click");
+        $('.sidebar').toggleClass("show");
+    });
+
+    $('.feat-btn').click(function () {
+        $('nav ul .feat-show').toggleClass("show");
+    });
+    $('.feat1-btn').click(function () {
+        $('nav ul .feat1-show').toggleClass("show1");
+    });
+    $('.feat2-btn').click(function () {
+        $('nav ul .feat2-show').toggleClass("show2");
+    });
+
+
+
+    let detail = JSON.parse(localStorage.getItem('jobdetails'))
+    // console.log(detail)
+
+    window.imageDetail.src = detail.image;
+    window.detailPart3.innerHTML = detail.position;
+    window.detailPart4.innerHTML = detail.cname;
+    window.detailPart5.innerHTML = detail.type;
+    window.detailPart6.innerHTML = detail.catType + " Category :";
+    window.detailPart7.innerText = detail.Category;
+
+
+    window.pc1.innerHTML = `Openings : ${detail.openings}`
+    window.pc2.innerHTML = `Start Date: ${detail.start_date}`
+    window.pc3.innerHTML = `Application Deadline: ${detail.application_deadline}`
+    window.pc4.innerHTML = `Salary: ${detail.salary}`
+
+    let discript = document.getElementById('discript')
+
+    let discrip = detail.description.split('\n')
+    // console.log('discrip:', discrip)
+    discrip.forEach((d) => {
+        let para = document.createElement('p')
+        para.innerText = d;
+        discript.append(para)
+    })
+    window.pc5.innerHTML = detail.perks
+
+    let skillBtn = document.getElementById('skillBtn')
+
+    let skill = detail.skills.split(",")
+    skill.forEach((s) => {
+        let btn = document.createElement('button')
+        btn.id = 'btn'
+        btn.innerText = s;
+        skillBtn.append(btn)
+    })
+
+    window.pc6.innerHTML = detail.company_description;
+    window.pc7.innerHTML = detail.location;
+
+    window.applybtn1.onclick = () => {
+        hello('Internship', 'All Internships')
+    }
+
+
+
+    window.applybtn2.onclick = () => {
+        // console.log('uo')
+      if(flag==1){
+        let div = document.createElement('div')
+        div.innerText = 'Your application has been submitted. Please complete your profile to stand a better chance to get shortlisted.';
+        div.id = 'popupMessage'
+        document.getElementById('nn123').append(div)
+        setTimeout(() => {
+            document.getElementById('popupMessage').style.display = 'none'
+            window.location.href = 'profile.html'
+        }, 1500);
+      }
+      else{
+          window.location.href='loginStudent.html'
+      }
+    }
+    
+</script>
